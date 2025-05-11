@@ -5,7 +5,7 @@ package za.ac.cput.domain;
      Author: RI Onwutali (222369345)
      Date: 11 May 2025 */
 
-public class Card {
+public class Card  {
 
     private String cardNumber;
     private String cvv;
