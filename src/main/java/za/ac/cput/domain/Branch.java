@@ -67,6 +67,7 @@ public class Branch {
             this.branchId = branch.branchId;
             this.numberOfTheaterRooms = branch.numberOfTheaterRooms;
             return this;
+
         }
         public Branch build() {
             return new Branch(this);
