@@ -60,6 +60,7 @@ public class Flat extends Address {
             this.addressId = addressId;
             return this;
         }
+
         public Builder setStreetNumber(String streetNumber) {
             this.streetNumber = streetNumber;
             return this;
