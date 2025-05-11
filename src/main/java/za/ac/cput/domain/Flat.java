@@ -40,7 +40,7 @@ public class Flat extends Address {
                 ", streetName='" + streetName + '\'' +
                 ", suburb='" + suburb + '\'' +
                 ", city='" + city + '\'' +
-                ", country='" + country+ '\'' +
+                ", country='" + country + '\'' +
                 ", postalCode=" + postalCode +
                 '}';
     }
@@ -80,10 +80,12 @@ public class Flat extends Address {
             this.city = city;
             return this;
         }
+
         public Builder setCountry(String country) {
             this.country = country;
             return this;
         }
+
         public Builder setPostalCode(short postalCode) {
             this.postalCode = postalCode;
             return this;
