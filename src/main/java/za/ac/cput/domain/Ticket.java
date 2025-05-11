@@ -1,3 +1,7 @@
+/* Ticket.java
+     Ticket POJO class
+     Author: SM Rawoot (221075127)
+     Date: 11 May 2025 */
 package za.ac.cput.domain;
 
 import org.springframework.scheduling.annotation.Scheduled;
