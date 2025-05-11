@@ -13,10 +13,8 @@ public class Address {
     protected String country;
     protected short postalCode;
 
-    // Protected no-arg constructor
     protected Address() {}
 
-    // Public constructor with all fields
     public Address(String addressId, String streetName, String streetNumber,
                    String suburb, String city, String country, short postalCode) {
         this.addressId = addressId;
@@ -28,7 +26,6 @@ public class Address {
         this.postalCode = postalCode;
     }
 
-    // Getters and setters
     public String getAddressId() {
         return addressId;
     }
