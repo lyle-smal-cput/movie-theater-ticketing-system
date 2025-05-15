@@ -37,6 +37,9 @@ public class CustomerFactory {
                 .setEmail(email)
                 .setAddress(address)
                 .setCellphoneNumber(cellphoneNumber)
+                .setGender(gender)
+                .setDateOfBirth(dateOfBirth)
+                .setCard(card)
                 .build();
     }
 }
