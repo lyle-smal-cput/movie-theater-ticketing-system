@@ -16,7 +16,7 @@ class CustomerFactoryTest {
 
     @Test
     void createCustomer() {
-        customer = CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "082123456", "male", LocalDate.of(2004, 1, 26), card);
+        customer = CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "+2782123456", "male", LocalDate.of(2004, 1, 26), card);
         assertNotNull(customer);
         System.out.println(customer.toString());
     }
