@@ -6,6 +6,7 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.Address;
 import za.ac.cput.domain.Admin;
+import za.ac.cput.util.Helper;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,17 @@ public class AdminFactory {
 
     public static Admin createAdmin(String userId, String username, String password, String firstName,
                                     String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth) {
+        //Validates if userId, username, password, firstName, lastName, email, address, cellphone, gender, dateOfBirth is null or empty
+        if (Helper.isNullOrEmpty(userId) || Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password) ||
+                Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) ||
+                address == null || Helper.isNullOrEmpty(cellphoneNumber) || Helper.isNullOrEmpty(gender) ){
+            return null;
+        }
+
+        //Validates email, phone number & gender
+        if(!Helper.isValidEmail(email) || !Helper.isValidPhoneNumber(cellphoneNumber) || !Helper.isValidGender(gender)){
+            return null;
+        }
         return new Admin.Builder()
                 .setUserId(userId)
                 .setUsername(username)
