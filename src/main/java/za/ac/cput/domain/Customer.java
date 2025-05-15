@@ -24,6 +24,22 @@ public class Customer extends User {
         this.card = builder.card;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", cellphoneNumber='" + cellphoneNumber + '\'' +
+                ", gender='"+ gender+ '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", card=" + card + "\'";
+    }
+
     public static class Builder {
         private String userId;
         private String username;

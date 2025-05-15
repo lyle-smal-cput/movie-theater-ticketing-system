@@ -1,5 +1,11 @@
 package za.ac.cput.util;
 
+/*
+ Helper.java
+ Helper class
+ Author: LJ Smal (223236012)
+     Date: 15 May 2025 */
+
 import org.apache.commons.validator.routines.*;
 import com.google.i18n.phonenumbers.*;
 

@@ -24,7 +24,7 @@ public class CustomerFactory {
         }
 
         //Validate email, phone number & gender
-        if(!Helper.isValidEmail(email) || !Helper.isValidPhoneNumber(cellphoneNumber)|| !Helper.isValidGender(gender)){
+        if(!Helper.isValidEmail(email) || !Helper.isValidGender(gender)){
             return null;
         }
 
