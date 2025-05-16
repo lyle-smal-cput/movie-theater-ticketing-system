@@ -48,6 +48,13 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
     }
 
+    public static boolean isValidPaymentId(String paymentId) {
+        if (isNullOrEmpty(paymentId)) {
+            return false;
+        }
+        return paymentId.matches("^[a-zA-Z0-9]+$");
+    }
+
     //Validate if string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if (str == null || str.isEmpty()) {
