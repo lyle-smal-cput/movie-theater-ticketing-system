@@ -10,8 +10,8 @@ import za.ac.cput.util.Helper;
 public class PaymentFactory {
 
     public static Payment createPayment(String paymentId, int amount) {
-        // Validates if paymentId is null or empty
-        if (Helper.isNullOrEmpty(paymentId) || Helper.isValidPaymentId(paymentId) || amount <= 0) {
+
+        if (Helper.isNullOrEmpty(paymentId) || !Helper.isValidPaymentId(paymentId) || amount <= 0) {
             return null;
         }
 
