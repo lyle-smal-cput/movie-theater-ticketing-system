@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
      Author: RI Onwutali (222369345)
      Date: 18 May 2025 */
 class ScheduleFactoryTest {
-    Movie movie = new Movie.MovieBuilder().setMovieId("MO89").setTitle("Venom").setAgeRestriction(18).setDescription("The never ending adventures").setDistributor("Dragon Studios").setGenre("Sci-Fi").setDurationMinutes(89).setViewType("2D").build();
-    Branch branch = new Branch.Builder().setBranchId("CW").setLocation("Canal Walk").setNumberOfTheaterRooms(10).build();
-    TheaterRoom theaterRoom = new TheaterRoom.Builder().setTheaterRoomId("CW9").setRoomNumber(9).set3DSupported(false).setBranch(branch).setCapacity(45).setSeatsAvailable(10).build();
 
     @Test
     void createSchedule() {
-        Schedule schedule = new ScheduleFactory().createSchedule("D84", LocalTime.of(14,25,54), LocalTime.of(17,35,25), LocalDate.of(2025,03,16), false, movie, theaterRoom);
+        Branch branch = BranchFactory.createBranch("Canal Walk", 10);
+        Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D");
+        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("CW9", 9, 48, 10, false, branch);
+        Schedule schedule = ScheduleFactory.createSchedule("D84", LocalTime.of(14,25,54), LocalTime.of(17,35,25), LocalDate.of(2025,03,16), false, movie, theaterRoom);
         assertNotNull(schedule);
         System.out.println(schedule);
     }
