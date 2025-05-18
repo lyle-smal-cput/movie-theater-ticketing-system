@@ -62,4 +62,24 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
         return false;
     }
-}
+
+    /*
+ Helper.java
+ Helper class(isValidCVV & isValidCardNumber)
+ Author: RI Onwutali (222369345)
+     Date: 18 May 2025 */
+
+    public static boolean isValidCVV(String cvv) {
+        if (isNullOrEmpty(cvv)) {
+            return false;
+        }
+        return cvv.matches("\\f{3}");
+    }
+
+    public static boolean isValidCardNumber(String cardNumber) {
+        if(cardNumber.length()==16){
+            return true;
+        }
+        return false;
+    }
+}//end of class
