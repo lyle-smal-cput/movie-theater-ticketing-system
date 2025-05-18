@@ -1,4 +1,8 @@
 package za.ac.cput.factory;
+/* CustomerFactoryTest.java
+     Customer Factory Test class
+     Author: LJ Smal (223236012)
+     Date: 18 May 2025 */
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Card;
