@@ -1,4 +1,8 @@
 package za.ac.cput.factory;
+/* CustomerFactoryTest.java
+     Customer Factory Test class
+     Author: LJ Smal (223236012)
+     Date: 18 May 2025 */
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Card;
@@ -16,7 +20,7 @@ class CustomerFactoryTest {
 
     @Test
     void createCustomer() {
-        customer = CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "082123456", "male", LocalDate.of(2004, 1, 26), card);
+        customer = CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "+2782123456", "male", LocalDate.of(2004, 1, 26), card);
         assertNotNull(customer);
         System.out.println(customer.toString());
     }
