@@ -16,7 +16,7 @@ class TicketFactoryTest {
     @Test
     void createTicket() {
         LocalDate date = LocalDate.of(2023, 10, 10);
-        House house = HouseFactory.createHouse("H123", "12", "Main Road", "Athlone", "Cape Town", "South Africa", (short) 7764);
+        House house = HouseFactory.createHouse("H123", "12", "Main Road", "Athlone", "Cape Town", (short) 7764);
         Card card = CardFactory.createCard("C123", "774", "1234567890123456");
         Customer customer = CustomerFactory.createCustomer("U123", "John Doe", "222", "John",
                 "Doe", "jdoe@gmail.com", house, "0795003139", "Male", date, card);
