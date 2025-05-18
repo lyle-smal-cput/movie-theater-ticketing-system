@@ -2,7 +2,7 @@ package za.ac.cput.domain;
 
 /* Cart.java
      Cart POJO class
-     Author: Christian Smith (221242597)
+     Author: C Smith (221242597)
      Date: 11 May 2025 */
 
 public class Cart {
