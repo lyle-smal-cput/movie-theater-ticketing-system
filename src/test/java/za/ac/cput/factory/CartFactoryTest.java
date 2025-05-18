@@ -16,7 +16,7 @@ public class CartFactoryTest {
         LocalDate date = LocalDate.of(2024,12,03);
         House house = HouseFactory.createHouse("H342","Off Road","Athlone","Cape Town","South Africa",(short)7742);
         Card card = CardFactory.createCard("1234567890123456", "123", "Lyle Smal");
-        Customer customer =CustomerFactory.createCustomer("cust123", "LukeMing", "1234","Luke","Ming","LukeMing@gmail.com",house,"0743648723","Male",date,card );
+        Customer customer =CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", house, "+2782123456", "male", LocalDate.of(2004, 1, 26), card);
 
         Cart cart = CartFactory.createCart("cart001", 3, customer);
 
