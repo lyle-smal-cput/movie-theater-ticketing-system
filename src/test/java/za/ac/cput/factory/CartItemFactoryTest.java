@@ -16,7 +16,7 @@ public class CartItemFactoryTest {
 
     @Test
     void createCartItem() {
-        LocalDate date = LocalDate.of(2024,12,03);
+        LocalDate date = LocalDate.of(2024,12,3);
         House house = HouseFactory.createHouse("H342","Off Road","Athlone","Cape Town","South Africa",(short)7742);
         Card card = new Card.CardBuilder().setCardNumber("1234567890123456").setCvv("123").setCardHolderName("JohnDoe").build();
         Customer customer =CustomerFactory.createCustomer("cust123", "John Doe", "1234","John","Doe","Johnesdoe@gmail.com",house,"0743648323","Male",date,card );
@@ -30,6 +30,7 @@ public class CartItemFactoryTest {
 
         CartItem cartItem = CartItemFactory.createCartItem("item123", 1, cart, schedule);
         assertNotNull(cartItem);
+
 
 
         System.out.println(cartItem);
