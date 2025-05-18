@@ -15,7 +15,7 @@ public class CartFactoryTest {
     void createCart() {
         LocalDate date = LocalDate.of(2024,12,03);
         House house = HouseFactory.createHouse("H342","Off Road","Athlone","Cape Town","South Africa",(short)7742);
-        Card card = new Card.CardBuilder().setCardNumber("1234567834343456").setCvv("153").setCardHolderName("loming").build();
+        Card card = CardFactory.createCard("1234567890123456", "123", "Lyle Smal");
         Customer customer =CustomerFactory.createCustomer("cust123", "LukeMing", "1234","Luke","Ming","LukeMing@gmail.com",house,"0743648723","Male",date,card );
 
         Cart cart = CartFactory.createCart("cart001", 3, customer);
