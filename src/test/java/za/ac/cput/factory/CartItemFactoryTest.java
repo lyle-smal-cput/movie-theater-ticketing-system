@@ -16,7 +16,7 @@ public class CartItemFactoryTest {
 
     @Test
     void createCartItem() {
-        LocalDate date = LocalDate.of(2024,12,03);
+        LocalDate date = LocalDate.of(2024,12,3);
         House house = HouseFactory.createHouse("H342","Off Road","Athlone","Cape Town","South Africa",(short)7742);
         Card card = new Card.CardBuilder().setCardNumber("1234567890123456").setCvv("123").setCardHolderName("JohnDoe").build();
         Customer customer =CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", house, "+2782123456", "male", LocalDate.of(2004, 1, 26), card);
@@ -28,10 +28,9 @@ public class CartItemFactoryTest {
         LocalTime endTime = LocalTime.of(14,0);
         Schedule schedule = ScheduleFactory.createSchedule("sched123",startTime,endTime, date, false, movie, theaterRoom);
 
-
         CartItem cartItem = CartItemFactory.createCartItem("item123", 1, cart, schedule);
-
         assertNotNull(cartItem);
+
 
 
         System.out.println(cartItem);
