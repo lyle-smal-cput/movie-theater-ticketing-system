@@ -1,22 +1,22 @@
 package za.ac.cput.factory;
 /* CartFactoryTest.java
-     Cart Factory Test Class
-     Author: C Smith (221242597)
-     Date: 16 May 2025 */
+     Cart Factory Test class
+     Author:  Smith (221242597)
+     Date: 18 May 2025 */
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Cart;
-import za.ac.cput.domain.Customer;
+import za.ac.cput.domain.User;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CartFactoryTest {
-    Customer user = new Customer.Builder().setUserId("user1").build();
-    Cart cart;
-
+public class CartFactoryTest {
     @Test
     void createCart() {
-        cart = CartFactory.createCart("cart1", 3, user);
+        User user = UserFactory.createUser("U124", "SamFish", "13422", "Samuel", "Fisher", "samfisher@gmail.com", null, "0812345678", "Male", java.time.LocalDate.of(1990, 5, 10));
+
+        Cart cart = CartFactory.createCart("cart001", 3, user);
+
         assertNotNull(cart);
-        System.out.println(cart.toString());
+        System.out.println(cart);
     }
 }
