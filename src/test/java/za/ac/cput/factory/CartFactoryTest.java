@@ -1,7 +1,7 @@
 package za.ac.cput.factory;
 /* CartFactoryTest.java
      Cart Factory Test class
-     Author:  Smith (221242597)
+     Author:C Smith (221242597)
      Date: 18 May 2025 */
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Cart;
