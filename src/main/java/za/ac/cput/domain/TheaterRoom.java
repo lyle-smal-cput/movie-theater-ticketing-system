@@ -88,7 +88,7 @@ public class TheaterRoom {
             return this;
         }
 
-        public Builder set3DSupported(boolean is3DSupported) {
+        public Builder setIs3DSupported(boolean is3DSupported) {
             this.is3DSupported = is3DSupported;
             return this;
         }

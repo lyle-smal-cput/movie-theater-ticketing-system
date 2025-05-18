@@ -9,6 +9,8 @@ package za.ac.cput.util;
 import org.apache.commons.validator.routines.*;
 import com.google.i18n.phonenumbers.*;
 
+import java.util.UUID;
+
 public class Helper {
 private static EmailValidator emailValidator = EmailValidator.getInstance();
 private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstance();
@@ -48,6 +50,13 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
     }
 
+    public static boolean isValidPaymentId(String paymentId) {
+        if (isNullOrEmpty(paymentId)) {
+            return false;
+        }
+        return paymentId.matches("^[a-zA-Z0-9]+$");
+    }
+
     //Validate if string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if (str == null || str.isEmpty()) {
@@ -55,4 +64,37 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
         return false;
     }
-}
+
+    /*
+ Helper.java
+ Helper class(isValidCVV & isValidCardNumber)
+ Author: RI Onwutali (222369345)
+     Date: 18 May 2025 */
+
+    public static boolean isValidCVV(String cvv) {
+        if (isNullOrEmpty(cvv)) {
+            return false;
+        }
+        return cvv.matches("\\f{3}");
+    }
+
+    public static boolean isValidCardNumber(String cardNumber) {
+        if(cardNumber.length()==16){
+            return true;
+        }
+        return false;
+    }
+
+    /* Helper.java
+     Helper POJO class
+     Author: S Rasmeni (222906073)
+     Date: 18 May 2025 */
+
+    public static String generateId() {
+        return UUID.randomUUID().toString();
+    }
+
+}//end of class
+
+
+

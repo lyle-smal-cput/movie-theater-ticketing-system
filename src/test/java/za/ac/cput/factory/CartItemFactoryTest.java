@@ -1,0 +1,39 @@
+package za.ac.cput.factory;
+/* CartItemFactoryTest.java
+     Cart Item Factory Test class
+     Author: C Smith (221242597)
+     Date: 18 May 2025 */
+import org.junit.jupiter.api.Test;
+import za.ac.cput.domain.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
+public class CartItemFactoryTest {
+
+    @Test
+    void createCartItem() {
+        LocalDate date = LocalDate.of(2024,12,03);
+        House house = HouseFactory.createHouse("H342","Off Road","Athlone","Cape Town","South Africa",(short)7742);
+        Card card = new Card.CardBuilder().setCardNumber("1234567890123456").setCvv("123").setCardHolderName("JohnDoe").build();
+        Customer customer =CustomerFactory.createCustomer("cust123", "John Doe", "1234","John","Doe","Johnesdoe@gmail.com",house,"0743648323","Male",date,card );
+        Cart cart = CartFactory.createCart("cart123", 2, customer);
+        Movie movie = MovieFactory.createMovie("Movie1","Example Movie", "Action", 120,"An action movie", 13, "Director Name", "2D");
+        Branch branch = BranchFactory.createBranch( "Cape Town", 5);
+        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("R1234",6,60,22,true, branch);
+        LocalTime startTime = LocalTime.of(12,0);
+        LocalTime endTime = LocalTime.of(14,0);
+        Schedule schedule = ScheduleFactory.createSchedule("sched123",startTime,endTime, date, false, movie, theaterRoom);
+
+
+        CartItem cartItem = CartItemFactory.createCartItem("item123", 1, cart, schedule);
+
+        assertNotNull(cartItem);
+
+
+        System.out.println(cartItem);
+    }
+}
