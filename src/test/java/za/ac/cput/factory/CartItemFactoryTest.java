@@ -22,8 +22,8 @@ public class CartItemFactoryTest {
         Customer customer =CustomerFactory.createCustomer("cust123", "John Doe", "1234","John","Doe","Johnesdoe@gmail.com",house,"0743648323","Male",date,card );
         Cart cart = CartFactory.createCart("cart123", 2, customer);
         Movie movie = MovieFactory.createMovie("Movie1","Example Movie", "Action", 120,"An action movie", 13, "Director Name", "2D");
-        Branch branch = BranchFactory.createBranch( "Cape Town", 5);
-        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("R1234",6,60,22,true, branch);
+        Branch branch = BranchFactory.createBranch("Cape Town", 5);
+        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
         LocalTime startTime = LocalTime.of(12,0);
         LocalTime endTime = LocalTime.of(14,0);
         Schedule schedule = ScheduleFactory.createSchedule("sched123",startTime,endTime, date, false, movie, theaterRoom);
