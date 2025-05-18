@@ -40,7 +40,7 @@ public class TheaterRoom {
         return seatsAvailable;
     }
 
-    public boolean isIs3DSupported() {
+    public boolean is3DSupported() {
         return is3DSupported;
     }
 
