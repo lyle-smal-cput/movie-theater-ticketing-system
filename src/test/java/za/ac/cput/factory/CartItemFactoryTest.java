@@ -28,9 +28,7 @@ public class CartItemFactoryTest {
         LocalTime endTime = LocalTime.of(14,0);
         Schedule schedule = ScheduleFactory.createSchedule("sched123",startTime,endTime, date, false, movie, theaterRoom);
 
-
         CartItem cartItem = CartItemFactory.createCartItem("item123", 1, cart, schedule);
-
         assertNotNull(cartItem);
 
 
