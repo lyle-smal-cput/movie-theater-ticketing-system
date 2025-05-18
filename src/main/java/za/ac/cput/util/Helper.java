@@ -41,7 +41,7 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
             return false;
         }
 
-        if(gender.equals("male") || gender.equals("female")) {
+        if(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")) {
            return true;
 
         }

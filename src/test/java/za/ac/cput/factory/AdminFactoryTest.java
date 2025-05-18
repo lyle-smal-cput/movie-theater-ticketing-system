@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 class AdminFactoryTest {
-    House address = new House.Builder().setAddressId("123456789").setStreetName("Main Street").setStreetNumber("28").setCity("Cape Town").setPostalCode((short)8000).setCountry("South Africa").setSuburb("Southfield").build();
+    House address = HouseFactory.createHouse("123456789", "Main Street", "28", "Cape Town", "South Africa", (short) 8000);
     Admin admin;
 
     @Test
