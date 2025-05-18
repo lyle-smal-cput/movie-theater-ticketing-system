@@ -9,6 +9,8 @@ package za.ac.cput.util;
 import org.apache.commons.validator.routines.*;
 import com.google.i18n.phonenumbers.*;
 
+import java.util.UUID;
+
 public class Helper {
 private static EmailValidator emailValidator = EmailValidator.getInstance();
 private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstance();
@@ -82,4 +84,17 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
         return false;
     }
+
+    /* Helper.java
+     Helper POJO class
+     Author: S Rasmeni (222906073)
+     Date: 18 May 2025 */
+
+    public static String generateId() {
+        return UUID.randomUUID().toString();
+    }
+
 }//end of class
+
+
+
