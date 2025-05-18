@@ -22,6 +22,21 @@ public class Admin extends User {
         this.dateOfBirth = builder.dateOfBirth;
     }
 
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", cellphoneNumber='" + cellphoneNumber + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dateOfBirth=" + dateOfBirth + '\'' ;
+    }
+
     public static class Builder {
         private String userId;
         private String username;
