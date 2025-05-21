@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Customer;
 
 @Repository
-public interface CustomerFactory extends JpaRepository<Customer, String> {
+public interface CustomerRepository extends JpaRepository<Customer, String> {
 }
