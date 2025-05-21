@@ -5,9 +5,18 @@ package za.ac.cput.domain;
      Author: LJ Smal (223236012)
      Date: 11 May 2025 */
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.Cascade;
+
 import java.time.LocalDate;
 
+@Entity
 public class Customer extends User {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "card_number")
     private Card card;
 
     private Customer(Builder builder) {
@@ -24,6 +33,10 @@ public class Customer extends User {
         this.card = builder.card;
     }
 
+    protected Customer() {
+
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -35,7 +48,7 @@ public class Customer extends User {
                 ", email='" + email + '\'' +
                 ", address=" + address +
                 ", cellphoneNumber='" + cellphoneNumber + '\'' +
-                ", gender='"+ gender+ '\'' +
+                ", gender='" + gender + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", card=" + card + "\'";
     }

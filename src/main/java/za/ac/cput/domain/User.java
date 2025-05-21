@@ -5,15 +5,23 @@ package za.ac.cput.domain;
      Author: LJ Smal (223236012)
      Date: 11 May 2025 */
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
+    @Id
     protected String userId;
     protected String username;
     protected String password;
     protected String firstName;
     protected String lastName;
     protected String email;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     protected Address address;
     protected String cellphoneNumber;
     protected String gender;
