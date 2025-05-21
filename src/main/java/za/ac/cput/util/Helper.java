@@ -84,10 +84,10 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
         return false;
     }
-    /* AddressFactory.java
-     Branch Factory POJO class
+    /* Helper.java
+     Helper class
      Author: S Rasmeni (222906073)
-     Date: 11 May 2025 */
+     Date: 18 May 2025 */
 
     public static String generateId() {
         return UUID.randomUUID().toString();
