@@ -1,12 +1,14 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.Entity;
+
 import java.time.LocalDate;
 
 /* Admin.java
      Admin POJO class
      Author: LJ Smal (223236012)
      Date: 11 May 2025 */
-
+@Entity
 public class Admin extends User {
 
     private Admin(Builder builder) {
@@ -20,6 +22,10 @@ public class Admin extends User {
         this.cellphoneNumber = builder.cellphoneNumber;
         this.gender = builder.gender;
         this.dateOfBirth = builder.dateOfBirth;
+    }
+
+    protected Admin() {
+
     }
 
     @Override
