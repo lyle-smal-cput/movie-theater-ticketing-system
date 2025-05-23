@@ -1,17 +1,26 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
+
 /* CartItem.java
      CartItem POJO class
      Author: C Smith (221242597)
      Date: 11 May 2025 */
-
+@Entity
 public class CartItem {
+    @Id
     private String cartItemId;
     private int quantity;
+
+    @ManyToOne
+    @JoinColumn(name="cart_id")
     private Cart cart;
+
+    @ManyToOne
+    @JoinColumn(name="schedule_id")
     private Schedule schedule;
 
-    private CartItem() {}
+    protected CartItem() {}
 
     private CartItem(Builder builder) {
         this.cartItemId = builder.cartItemId;

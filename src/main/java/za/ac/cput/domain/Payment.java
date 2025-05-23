@@ -1,15 +1,17 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
 /* Payment.java
      Payment POJO class
      Author: C Smith (221242597)
      Date: 11 May 2025 */
-
+@Entity
 public class Payment {
+    @Id
     private String paymentId;
     private int amount;
 
-    private Payment() {
+    protected Payment() {
     }
 
     private Payment(Builder builder) {
