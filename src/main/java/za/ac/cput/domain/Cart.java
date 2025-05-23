@@ -1,16 +1,26 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
+
+
 /* Cart.java
      Cart POJO class
-     Author: Christian Smith (221242597)
+     Author: C Smith (221242597)
      Date: 11 May 2025 */
-
+@Entity
 public class Cart {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String cartId;
     private int quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
-    private Cart() {
+    protected Cart() {
     }
 
     private Cart(Builder builder) {
