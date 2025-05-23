@@ -84,15 +84,15 @@ private static PhoneNumberUtil phoneNumberValidator = PhoneNumberUtil.getInstanc
         }
         return false;
     }
-
     /* Helper.java
-     Helper POJO class
+     Helper class
      Author: S Rasmeni (222906073)
      Date: 18 May 2025 */
 
     public static String generateId() {
         return UUID.randomUUID().toString();
     }
+
 
 }//end of class
 

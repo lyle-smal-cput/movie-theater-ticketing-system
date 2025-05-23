@@ -25,7 +25,7 @@ class TicketFactoryTest {
         LocalTime endTime = LocalTime.of(14, 0);
         Movie movie = MovieFactory.createMovie("M123", "Inception", "Sci-Fi", 148, "Christopher Nolan", 2010, "Warner Bros", "PG-13");
         Branch branch = BranchFactory.createBranch("Kenilworth",10);
-        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, null);
+        TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
         Schedule schedule = ScheduleFactory.createSchedule("S123", startTime, endTime, date, false, movie, theaterRoom);
         Seat seat = SeatFactory.createSeat("S123", 1, true, theaterRoom);
         Ticket ticket = TicketFactory.createTicket("123", customer, payment, schedule, seat);
