@@ -12,7 +12,7 @@ import za.ac.cput.util.Helper;
 public class CartItemFactory {
 
     public static CartItem createCartItem(String cartItemId, int quantity, Cart cart, Schedule schedule) {
-        // Validates if cartItemId, quantity, cart, schedule is null or empty
+
         if (Helper.isNullOrEmpty(cartItemId) || quantity <= 0 || cart == null || schedule == null) {
             return null;
         }
