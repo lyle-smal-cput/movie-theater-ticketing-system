@@ -11,6 +11,8 @@ import java.util.List;
 
 @Repository
 public interface CartItemRepository extends JpaRepository<CartItem, String> {
-    List<CartItem> findByCart_CartId(String cartId);
-    List<CartItem> findBySchedule_ScheduleId(String scheduleId); // if Schedule has a scheduleId
+    List<CartItem> findByCartItemId(String cartItemId);
+    List<CartItem> findByCartId(String cartId);
+    List<CartItem> findByScheduleId(String scheduleId);
+    List<CartItem> findByQuantity(int quantity);
 }
