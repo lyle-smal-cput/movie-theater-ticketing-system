@@ -4,10 +4,17 @@
      Date: 11 May 2025 */
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Seat {
+    @Id
     private String seatId;
     private int seatNumber;
     private boolean isAvailable;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "theater_room_id")
     private TheaterRoom theaterRoom;
 
     protected Seat(){
