@@ -1,5 +1,5 @@
-/* SeatControllerTest.java
-     Seat Controller Test class
+/* TheaterRoomControllerTest.java
+     Theater Room Controller Test class
      Author: SM Rawoot (221075127)
      Date: 25 May 2025 */
 package za.ac.cput.controller;
@@ -10,59 +10,56 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Branch;
-import za.ac.cput.domain.Seat;
 import za.ac.cput.domain.TheaterRoom;
 import za.ac.cput.factory.BranchFactory;
-import za.ac.cput.factory.SeatFactory;
 import za.ac.cput.factory.TheaterRoomFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest
-class SeatControllerTest {
-    private final SeatController controller;
+class TheaterRoomControllerTest {
+    private final TheaterRoomController controller;
 
     Branch branch = BranchFactory.createBranch("Kenilworth", 10);
     TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
-    Seat seat = SeatFactory.createSeat("S123", 1, true, theaterRoom);
 
     @Autowired
-    SeatControllerTest(SeatController controller) {
+    TheaterRoomControllerTest(TheaterRoomController controller) {
         this.controller = controller;
     }
 
     @Test
     void a_create() {
-        Seat created = controller.create(seat);
+        TheaterRoom created = controller.create(theaterRoom);
         assertNotNull(created);
         System.out.println(created);
     }
 
     @Test
     void b_read() {
-        Seat read = controller.read(seat.getSeatId());
+        TheaterRoom read = controller.read(theaterRoom.getTheaterRoomId());
         assertNotNull(read);
         System.out.println(read);
     }
 
     @Test
     void c_update() {
-        Seat updatedSeat = new Seat.Builder().copy(seat).setSeatNumber(2).build();
-        Seat updated = controller.update(updatedSeat);
+        TheaterRoom updatedTheaterRoom = new TheaterRoom.Builder().copy(theaterRoom).setTheaterRoomId("TR124").build();
+        TheaterRoom updated = controller.update(updatedTheaterRoom);
         assertNotNull(updated);
         System.out.println(updated);
     }
 
     @Test
-    void e_getAll() {
+    void d_getAll() {
         assertFalse(controller.getAll().isEmpty());
         System.out.println(controller.getAll());
     }
 
     @Test
-    void d_delete() {
-        boolean deleted = controller.delete(seat.getSeatId());
+    void e_delete() {
+        boolean deleted = controller.delete(theaterRoom.getTheaterRoomId());
         assertTrue(deleted);
-        System.out.println("Seat deleted successfully");
+        System.out.println("Deleted: " + deleted);
     }
 }
