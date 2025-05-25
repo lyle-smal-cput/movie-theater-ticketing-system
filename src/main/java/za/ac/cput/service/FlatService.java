@@ -1,5 +1,8 @@
 package za.ac.cput.service;
-
+/* Flat Service.java
+    Flat Service class
+     Author: S Rasmeni (222906073)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Flat;
