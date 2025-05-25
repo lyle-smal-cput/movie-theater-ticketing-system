@@ -1,5 +1,8 @@
 package za.ac.cput.service;
-
+/* Branch Interface Service .java
+     Branch Service interface
+     Author: S Rasmeni (222906073)
+     Date: 25 May 2025 */
 import za.ac.cput.domain.Branch;
 import za.ac.cput.domain.Flat;
 

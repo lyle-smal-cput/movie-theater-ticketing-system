@@ -9,7 +9,10 @@ import za.ac.cput.factory.BranchFactory;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/* Branch Service Test.java
+     Branch Service Test class
+     Author: S Rasmeni (222906073)
+     Date: 25 May 2025 */
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class BranchServiceTest {

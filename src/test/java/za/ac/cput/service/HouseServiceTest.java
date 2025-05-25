@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.House;
 import za.ac.cput.factory.HouseFactory;
-
+/* House Service Test.java
+    House Service Test class
+     Author: S Rasmeni (222906073)
+     Date: 25 May 2025 */
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

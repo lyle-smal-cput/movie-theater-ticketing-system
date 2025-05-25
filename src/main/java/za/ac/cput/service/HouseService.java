@@ -1,5 +1,8 @@
 package za.ac.cput.service;
-
+/* House Service.java
+     House Service class
+     Author: S Rasmeni (222906073)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.House;
