@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ISeatService extends IService<Seat, String> {
     List<Seat> getAll();
+
 }
