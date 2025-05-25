@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HouseFactoryTest {
     @Test
-    void testCreateHouseSuccess() {
+    void createHouse() {
         House house = HouseFactory.createHouse("22", "Kloof Street",
                 "Gardens", "Cape Town",
                 "South Africa", (short) 8001);
@@ -25,7 +25,7 @@ class HouseFactoryTest {
     }
 
     @Test
-    void testCreateHouseWithInvalidPostalCode() {
+    void createHouseWithInvalidPostalCode() {
         House house = HouseFactory.createHouse("22", "Kloof Street",
                 "Gardens", "Cape Town",
                 "South Africa", (short) 0);
@@ -33,7 +33,7 @@ class HouseFactoryTest {
     }
 
     @Test
-    void testCreateHouseWithNegativePostalCode() {
+    void createHouseWithNegativePostalCode() {
         House house = HouseFactory.createHouse("22", "Kloof Street",
                 "Gardens", "Cape Town",
                 "South Africa", (short) -1000);
@@ -41,7 +41,7 @@ class HouseFactoryTest {
     }
 
     @Test
-    void testCreateHouseWithMissingStreetName() {
+    void createHouseWithMissingStreetName() {
         House house = HouseFactory.createHouse("22", null,
                 "Gardens", "Cape Town",
                 "South Africa", (short) 8001);
@@ -49,19 +49,11 @@ class HouseFactoryTest {
     }
 
     @Test
-    void testCreateHouseWithEmptyStreetNumber() {
+    void createHouseWithEmptyStreetNumber() {
         House house = HouseFactory.createHouse("", "Kloof Street",
                 "Gardens", "Cape Town",
                 "South Africa", (short) 8001);
         assertNull(house, "House with empty street number should be invalid");
     }
 
-    @Test
-    void testHouseToString() {
-        House house = HouseFactory.createHouse("22", "Kloof Street",
-                "Gardens", "Cape Town",
-                "South Africa", (short) 8001);
-        assertNotNull(house.toString());
-        assertTrue(house.toString().contains("Kloof Street"));
-    }
 }

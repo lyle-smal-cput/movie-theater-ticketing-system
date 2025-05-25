@@ -1,3 +1,7 @@
+/* TheaterRoomFactoryTest.java
+     TheaterRoomFactoryTest class
+     Author: S Rawoot (221075127)
+     Date: 18 May 2025 */
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
