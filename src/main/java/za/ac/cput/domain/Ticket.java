@@ -4,13 +4,27 @@
      Date: 11 May 2025 */
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
 import org.springframework.scheduling.annotation.Scheduled;
-
+@Entity
 public class Ticket {
+    @Id
     private String ticketId;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "payment_id")
     private Payment payment;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "schedule_id")
     private Schedule schedule;
+
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "seat_id")
     private Seat seat;
 
     protected Ticket() {

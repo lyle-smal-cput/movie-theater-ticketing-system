@@ -4,12 +4,18 @@
      Date: 11 May 2025 */
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class TheaterRoom {
+    @Id
     private String theaterRoomId;
     private int roomNumber;
     private int capacity;
     private int seatsAvailable;
     private boolean is3DSupported;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "branch_id")
     private Branch branch;
 
     protected TheaterRoom() {

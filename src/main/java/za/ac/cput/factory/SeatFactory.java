@@ -1,3 +1,7 @@
+/* SeatFactory.java
+     SeatFactory class
+     Author: S Rawoot (221075127)
+     Date: 18 May 2025 */
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Seat;
