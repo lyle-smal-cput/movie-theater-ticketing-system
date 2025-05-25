@@ -3,8 +3,12 @@ package za.ac.cput.domain;
      Address POJO class
      Author: S Rasmeni (222906073)
      Date: 11 May 2025 */
+import jakarta.persistence.*;
 
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Address {
+    @Id
     protected String addressId;
     protected String streetName;
     protected String streetNumber;

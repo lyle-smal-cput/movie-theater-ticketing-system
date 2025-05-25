@@ -3,6 +3,9 @@ package za.ac.cput.domain;
      Flat POJO class
      Author: S Rasmeni (222906073)
      Date: 11 May 2025 */
+import jakarta.persistence.Entity;
+
+@Entity
 public class Flat extends Address {
     private short unitNumber;
     private String complexName;

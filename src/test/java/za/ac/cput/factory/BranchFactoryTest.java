@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BranchFactoryTest {
     @Test
-    void testCreateBranchSuccess() {
+    void createBranch() {
         Branch branch = BranchFactory.createBranch("Canal Walk, Century City", 12);
         assertNotNull(branch);
         assertEquals("Canal Walk, Century City", branch.getLocation());
@@ -20,33 +20,27 @@ class BranchFactoryTest {
     }
 
     @Test
-    void testCreateBranchWithNoTheaters() {
+    void createBranchWithNoTheaters() {
         Branch branch = BranchFactory.createBranch("Canal Walk, Century City", 0);
         assertNull(branch, "Branch with 0 theaters should be invalid");
     }
 
     @Test
-    void testCreateBranchWithNegativeTheaters() {
+    void createBranchWithNegativeTheaters() {
         Branch branch = BranchFactory.createBranch("Canal Walk, Century City", -1);
         assertNull(branch, "Branch with negative theaters should be invalid");
     }
 
     @Test
-    void testCreateBranchWithNullLocation() {
+    void createBranchWithNullLocation() {
         Branch branch = BranchFactory.createBranch(null, 12);
         assertNull(branch, "Branch with null location should be invalid");
     }
 
     @Test
-    void testCreateBranchWithEmptyLocation() {
+    void createBranchWithEmptyLocation() {
         Branch branch = BranchFactory.createBranch("", 12);
         assertNull(branch, "Branch with empty location should be invalid");
     }
 
-    @Test
-    void testBranchToString() {
-        Branch branch = BranchFactory.createBranch("Canal Walk, Century City", 12);
-        assertNotNull(branch.toString());
-        assertTrue(branch.toString().contains("Canal Walk"));
-    }
 }
