@@ -1,11 +1,15 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 /* Movie.java
      Movie POJO class
      Author: RI Onwutali (222369345)
      Date: 11 May 2025 */
-
+@Entity
 public class Movie {
+    @Id
     private String movieId;
     private String title;
     private String genre;
@@ -15,7 +19,7 @@ public class Movie {
     private String distributor;
     private String viewType;
 
-    public Movie() {
+    protected Movie() {
 
     }//end of Movie()
 
