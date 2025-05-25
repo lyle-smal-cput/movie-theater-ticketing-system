@@ -3,7 +3,9 @@ package za.ac.cput.domain;
      House POJO class
      Author: S Rasmeni (222906073)
      Date: 11 May 2025 */
+import jakarta.persistence.Entity;
 
+@Entity
 public class House extends Address {
 
     public House() {

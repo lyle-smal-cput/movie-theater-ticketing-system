@@ -1,10 +1,15 @@
 package za.ac.cput.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 /* Branch.java
      Branch POJO class
      Author: S Rasmeni (222906073)
      Date: 11 May 2025 */
-
+@Entity
 public class Branch {
+    @Id
     private String branchId;
     private String location;
     private int numberOfTheaterRooms;

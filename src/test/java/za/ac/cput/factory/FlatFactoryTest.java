@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FlatFactoryTest {
     @Test
-    void testCreateFlatSuccess() {
+    void createFlat() {
         Flat flat = FlatFactory.createFlat("45", "Ocean View Drive", "Sea Point",
                 "Cape Town", "South Africa", (short) 8005,
                 "The Waves Complex", (short) 302);
@@ -19,7 +19,7 @@ class FlatFactoryTest {
     }
 
     @Test
-    void testCreateFlatFieldsCorrectlySet() {
+    void createFlatFieldsCorrectlySet() {
         Flat flat = FlatFactory.createFlat("45", "Ocean View Drive", "Sea Point",
                 "Cape Town", "South Africa", (short) 8005,
                 "The Waves Complex", (short) 302);
@@ -31,7 +31,7 @@ class FlatFactoryTest {
     }
 
     @Test
-    void testCreateFlatWithInvalidUnitNumber() {
+    void createFlatWithInvalidUnitNumber() {
         Flat flat = FlatFactory.createFlat("45", "Ocean View Drive", "Sea Point",
                 "Cape Town", "South Africa", (short) 8005,
                 "The Waves Complex", (short) 0);
@@ -39,7 +39,7 @@ class FlatFactoryTest {
     }
 
     @Test
-    void testCreateFlatWithMissingComplexName() {
+    void createFlatWithMissingComplexName() {
         Flat flat = FlatFactory.createFlat("45", "Ocean View Drive", "Sea Point",
                 "Cape Town", "South Africa", (short) 8005,
                 null, (short) 302);
@@ -47,7 +47,7 @@ class FlatFactoryTest {
     }
 
     @Test
-    void testCreateFlatWithEmptyStreetName() {
+    void createFlatWithEmptyStreetName() {
         Flat flat = FlatFactory.createFlat("45", "", "Sea Point",
                 "Cape Town", "South Africa", (short) 8005,
                 "The Waves Complex", (short) 302);
