@@ -1,36 +1,34 @@
-/* SeatService.java
-     Seat Service class
+/* TicketService.java
+     Ticket Service class
      Author: SM Rawoot (221075127)
      Date: 25 May 2025 */
 package za.ac.cput.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.Seat;
-import za.ac.cput.repository.SeatRepository;
+import za.ac.cput.domain.Ticket;
+import za.ac.cput.repository.TicketRepository;
 
 import java.util.List;
-
 @Service
-public class SeatService implements ISeatService {
-
-    private ISeatService service;
+public class TicketService implements ITicketService{
+    private ITicketService service;
     @Autowired
-    private SeatRepository repository;
+    private TicketRepository repository;
 
     @Override
-    public Seat create(Seat seat) {
-        return this.repository.save(seat);
+    public Ticket create(Ticket ticket) {
+        return this.repository.save(ticket);
     }
 
     @Override
-    public Seat read(String id) {
+    public Ticket read(String id) {
         return this.repository.findById(id).orElse(null);
     }
 
     @Override
-    public Seat update(Seat seat) {
-        return this.repository.save(seat);
+    public Ticket update(Ticket ticket) {
+        return this.repository.save(ticket);
     }
 
     @Override
@@ -40,7 +38,7 @@ public class SeatService implements ISeatService {
     }
 
     @Override
-    public List<Seat> getAll() {
+    public List<Ticket> getAll() {
         return this.repository.findAll();
     }
 }
