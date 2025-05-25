@@ -4,16 +4,23 @@ package za.ac.cput.domain;
      Author: RI Onwutali (222369345)
      Date: 11 May 2025 */
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-
+@Entity
 public class Schedule {
+    @Id
     private String scheduleId;
     private LocalTime startTime;
     private LocalTime endTime;
     private LocalDate date;
     private boolean isFinishedAiring;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "movie_id")
     private  Movie movie;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "theater_id")
     private TheaterRoom theaterRoom;
 
     public Schedule() {

@@ -1,19 +1,19 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
+
 /* Card.java
      Card POJO class
      Author: RI Onwutali (222369345)
      Date: 11 May 2025 */
-
+@Entity
 public class Card  {
-
+@Id
     private String cardNumber;
     private String cvv;
     private String cardHolderName;
 
-
-
-    public Card(){
+    protected Card(){
 
     }//end of Card()
 
