@@ -39,7 +39,7 @@ public class CustomerFactory {
                 .setCellphoneNumber(cellphoneNumber)
                 .setGender(gender)
                 .setDateOfBirth(dateOfBirth)
-                .setCard(card)
+                .addCard(card)
                 .build();
     }
 }
