@@ -6,6 +6,7 @@ import jakarta.persistence.*;
      Card POJO class
      Author: RI Onwutali (222369345)
      Date: 11 May 2025 */
+
 @Entity
 public class Card  {
 @Id

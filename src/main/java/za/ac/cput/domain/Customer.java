@@ -10,14 +10,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import org.hibernate.annotations.Cascade;
+import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer extends User {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "card_number")
-    private Card card;
+    private List<Card> cards;
 
     private Customer(Builder builder) {
         this.userId = builder.userId;
@@ -30,7 +33,7 @@ public class Customer extends User {
         this.cellphoneNumber = builder.cellphoneNumber;
         this.gender = builder.gender;
         this.dateOfBirth = builder.dateOfBirth;
-        this.card = builder.card;
+        this.cards = builder.cards;
     }
 
     protected Customer() {
@@ -50,7 +53,7 @@ public class Customer extends User {
                 ", cellphoneNumber='" + cellphoneNumber + '\'' +
                 ", gender='" + gender + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", card=" + card + "\'";
+                ", card=" + cards + "\'";
     }
 
     public static class Builder {
@@ -64,7 +67,7 @@ public class Customer extends User {
         private String cellphoneNumber;
         private String gender;
         private LocalDate dateOfBirth;
-        private Card card;
+        private List<Card> cards = new ArrayList<>();
 
         public Builder setUserId(String userId) {
             this.userId = userId;
@@ -116,8 +119,8 @@ public class Customer extends User {
             return this;
         }
 
-        public Builder setCard(Card card) {
-            this.card = card;
+        public Builder addCard(Card card) {
+            this.cards.add(card);
             return this;
         }
 
@@ -136,7 +139,7 @@ public class Customer extends User {
             this.cellphoneNumber = customer.cellphoneNumber;
             this.gender = customer.gender;
             this.dateOfBirth = customer.dateOfBirth;
-            this.card = customer.card;
+            this.cards = customer.cards;
             return this;
         }
     }
