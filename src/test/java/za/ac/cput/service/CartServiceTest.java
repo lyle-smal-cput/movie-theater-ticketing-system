@@ -17,32 +17,45 @@ class CartServiceTest {
     @Autowired
     private ICartService service;
 
-    private final Cart cart = CartFactory.createCart("C123", "User001");
+    private static final Cart cart = CartFactory.createCart("C123", "User001");
 
     @Test
     void a_create() {
         Cart created = service.create(cart);
         assertNotNull(created);
-        System.out.println(created);
+        System.out.println("Created: " + created);
     }
 
     @Test
     void b_read() {
         Cart read = service.read(cart.getCartId());
         assertNotNull(read);
-        System.out.println(read);
+        System.out.println("Read: " + read);
     }
 
     @Test
     void c_update() {
-        Cart newCart = new Cart.Builder().copy(cart).setUserId("User002").build();
+        Cart newCart = new Cart.Builder()
+                .copy(cart)
+                .setUserId("User002")
+                .build();
         Cart updated = service.update(newCart);
         assertNotNull(updated);
-        System.out.println(updated);
+        System.out.println("Updated: " + updated);
     }
 
     @Test
     void d_getAll() {
-        System.out.println(service.getAll());
+        var carts = service.getAll();
+        assertNotNull(carts);
+        assertFalse(carts.isEmpty(), "Expected non-empty list of carts");
+        System.out.println("All carts: " + carts);
+    }
+
+    @Test
+    void e_delete() {
+        boolean success = service.delete(cart.getCartId());
+        assertTrue(success);
+        System.out.println("Deleted: " + cart.getCartId());
     }
 }
