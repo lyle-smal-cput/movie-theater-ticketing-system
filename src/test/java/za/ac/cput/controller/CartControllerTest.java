@@ -20,7 +20,6 @@ class CartControllerTest {
 
     private static Cart testCart;
     private static User testUser;
-    private static final String INVALID_ID = "INVALID_ID";
 
     @BeforeAll
     static void setUp() {
@@ -52,24 +51,25 @@ class CartControllerTest {
                 .copy(testCart)
                 .setQuantity(5)
                 .build();
-        assertNotNull(controller.update(updated));
-        System.out.println("Updated: " + updated);
+        Cart result = controller.update(updated);
+        assertNotNull(result);
+        assertEquals(5, result.getQuantity());
+        System.out.println("Updated: " + result);
     }
 
     @Test
     @Order(4)
+    void getAll() {
+        var all = controller.getAll();
+        assertFalse(all.isEmpty());
+        System.out.println("GetAll: " + all.size() + " carts");
+    }
+
+    @Test
+    @Order(5)
     void delete() {
         boolean success = controller.delete(testCart.getCartId());
         assertTrue(success);
         System.out.println("Deleted: " + testCart.getCartId());
     }
-
-    @Test
-    @Order(5)
-    void getAll() {
-        assertFalse(controller.getAll().isEmpty());
-        System.out.println("GetAll: " + controller.getAll().size() + " carts");
-    }
-
-
 }

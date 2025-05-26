@@ -1,8 +1,6 @@
 package za.ac.cput.service;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.CartItem;
@@ -46,6 +44,16 @@ class CartItemServiceTest {
 
     @Test
     void d_getAll() {
-        System.out.println("All items: " + service.getAll());
+        var all = service.getAll();
+        assertNotNull(all);
+        assertFalse(all.isEmpty(), "Expected non-empty list of cart items");
+        System.out.println("All items: " + all);
+    }
+
+    @Test
+    void e_delete() {
+        boolean success = service.delete(cartItem.getCartItemId());
+        assertTrue(success);
+        System.out.println("Deleted: " + cartItem.getCartItemId());
     }
 }
