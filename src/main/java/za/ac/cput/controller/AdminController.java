@@ -12,6 +12,7 @@ import za.ac.cput.service.AdminService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
@@ -26,6 +27,7 @@ public class AdminController {
     public Admin create(@RequestBody Admin admin) {
         return service.create(admin);
     }
+
 
     @GetMapping("/read/{userId}")
     public Admin read(@PathVariable String userId) {

@@ -13,8 +13,9 @@ import java.util.List;
 public interface TicketRepository extends JpaRepository<Ticket, String> {
 
     Ticket findByTicketId(String ticketId);
-    List<Ticket> findByUserId(String userId);
-    List<Ticket> findByPaymentId(String paymentId);
-    List<Ticket> findByScheduleId(String scheduleId);
-    List<Ticket> findBySeatId(String seatId);
+    List<Ticket> findByPaymentPaymentId(String paymentId);  // if Payment entity has paymentId field
+
+    List<Ticket> findByScheduleScheduleId(String scheduleId);  // if Schedule entity has scheduleId field
+
+    List<Ticket> findBySeatSeatId(String seatId);
 }
