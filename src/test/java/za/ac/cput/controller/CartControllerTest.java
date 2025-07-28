@@ -5,9 +5,13 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Cart;
-import za.ac.cput.domain.User;
+import za.ac.cput.domain.Customer;
+import za.ac.cput.factory.CardFactory;
 import za.ac.cput.factory.CartFactory;
-import za.ac.cput.factory.UserFactory;
+import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.factory.HouseFactory;
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,12 +23,13 @@ class CartControllerTest {
     private CartController controller;
 
     private static Cart testCart;
-    private static User testUser;
+    private static Customer customer = CustomerFactory.createCustomer(
+            "cust123", "customer", "password", "John", "Doe", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1), CardFactory.createCard("1234567890123456", "12/25", "username"));
+
 
     @BeforeAll
     static void setUp() {
-        testUser = UserFactory.createUser("user123", "John", "Doe", "john@example.com");
-        testCart = CartFactory.createCart("cart123", 2, testUser);
+        testCart = CartFactory.createCart("cart123", 2, customer);
     }
 
     @Test
