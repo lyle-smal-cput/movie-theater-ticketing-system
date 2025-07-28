@@ -22,7 +22,7 @@ public interface AdminRepository extends JpaRepository<Admin, String> {
     List<Admin> findByFirstName(String firstName);
     List<Admin> findByLastName(String lastName);
     List<Admin> findByEmail(String email);
-    List<Admin> findByAddressId(String addressId);
+    List<Admin> findByAddressAddressId(String addressId);
     List<Admin> findAdminByCellphoneNumber(String cellphoneNumber);
     List<Admin> findByGender(String gender);
     List<Admin> findByDateOfBirth(LocalDate dateOfBirth);

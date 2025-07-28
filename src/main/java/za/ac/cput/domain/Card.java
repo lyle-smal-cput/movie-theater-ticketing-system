@@ -8,30 +8,44 @@ import jakarta.persistence.*;
      Date: 11 May 2025 */
 
 @Entity
-public class Card  {
-@Id
-    private String cardNumber;
+public class Card {
+
+    @Id
+    @Column(name = "card_number")
+    private String cardNumber;  // Primary key
+
     private String cvv;
     private String cardHolderName;
 
-    protected Card(){
+    @ManyToOne
+    @JoinColumn(name = "customer_id")  // foreign key column
+    private Customer customer;
 
-    }//end of Card()
+    protected Card() { }
 
-    public Card(CardBuilder builder){
+    public Card(CardBuilder builder) {
         this.cardNumber = builder.cardNumber;
         this.cvv = builder.cvv;
         this.cardHolderName = builder.cardHolderName;
-    }//end of Card(CardBuilder)
+        this.customer = builder.customer;
+    }
+
+    // Getters and setters...
 
     public String getCardNumber() {
         return cardNumber;
     }
+
     public String getCvv() {
         return cvv;
     }
+
     public String getCardHolderName() {
         return cardHolderName;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     @Override
@@ -40,17 +54,17 @@ public class Card  {
                 "cardNumber='" + cardNumber + '\'' +
                 ", cvv='" + cvv + '\'' +
                 ", cardHolderName='" + cardHolderName + '\'' +
+                ", customer=" + (customer != null ? customer.getUserId() : "null") +
                 '}';
-    }//end of toString
+    }
 
     public static class CardBuilder {
         private String cardNumber;
         private String cvv;
         private String cardHolderName;
+        private Customer customer;
 
-        public CardBuilder(){
-
-        }
+        public CardBuilder() { }
 
         public CardBuilder(String cardNumber, String cvv, String cardHolderName) {
             this.cardNumber = cardNumber;
@@ -62,25 +76,32 @@ public class Card  {
             this.cardNumber = cardNumber;
             return this;
         }
+
         public CardBuilder setCvv(String cvv) {
             this.cvv = cvv;
             return this;
         }
+
         public CardBuilder setCardHolderName(String cardHolderName) {
             this.cardHolderName = cardHolderName;
             return this;
         }
 
-        public CardBuilder copy(Card card){
+        public CardBuilder setCustomer(Customer customer) {
+            this.customer = customer;
+            return this;
+        }
+
+        public CardBuilder copy(Card card) {
             this.cardNumber = card.cardNumber;
             this.cvv = card.cvv;
             this.cardHolderName = card.cardHolderName;
+            this.customer = card.customer;
             return this;
         }
-        public Card build(){
+
+        public Card build() {
             return new Card(this);
         }
-
-    }//end of static class
-}//end of class
-
+    }
+}
