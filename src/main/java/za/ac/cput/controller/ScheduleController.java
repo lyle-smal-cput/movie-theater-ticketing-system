@@ -6,8 +6,9 @@ import za.ac.cput.domain.Schedule;
 import za.ac.cput.service.ScheduleService;
 
 import java.util.List;
-@RestController
 
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
 @RequestMapping("/Schedule")
 public class ScheduleController {
     private ScheduleService service;

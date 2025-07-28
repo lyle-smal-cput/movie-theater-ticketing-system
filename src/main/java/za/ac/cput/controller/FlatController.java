@@ -9,6 +9,7 @@ import za.ac.cput.domain.Flat;
 import za.ac.cput.service.FlatService;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/flat")
 public class FlatController {

@@ -9,6 +9,7 @@ import za.ac.cput.domain.Branch;
 import za.ac.cput.service.BranchService;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/branch")
 public class BranchController {
