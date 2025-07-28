@@ -12,6 +12,7 @@ import za.ac.cput.service.CustomerService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {

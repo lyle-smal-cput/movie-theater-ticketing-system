@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/Movie")
 public class MovieController {
 
@@ -25,7 +26,7 @@ public class MovieController {
         return service.create(movie);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+
     @GetMapping("/read/{movieId}")
     public Movie read(@PathVariable String movieId) {
 
@@ -44,7 +45,6 @@ public class MovieController {
         service.delete(movieId);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/getAll")
     public List<Movie> getAll() {
         return service.getAll();

@@ -11,6 +11,7 @@ import za.ac.cput.service.SeatService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/seat")
 public class SeatController {

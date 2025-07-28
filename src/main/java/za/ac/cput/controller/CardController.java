@@ -6,8 +6,9 @@ import za.ac.cput.service.CardService;
 
 import za.ac.cput.domain.Card;
 import java.util.List;
-@RestController
 
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
 @RequestMapping("/Card")
 public class CardController {
     private CardService service;

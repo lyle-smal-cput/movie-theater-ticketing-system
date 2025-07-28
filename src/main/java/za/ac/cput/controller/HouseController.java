@@ -9,6 +9,7 @@ import za.ac.cput.domain.House;
 import za.ac.cput.service.HouseService;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/house")
 public class HouseController {

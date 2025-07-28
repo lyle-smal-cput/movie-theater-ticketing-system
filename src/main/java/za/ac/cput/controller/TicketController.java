@@ -11,6 +11,7 @@ import za.ac.cput.service.TicketService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/Ticket")
 public class TicketController {
