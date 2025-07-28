@@ -17,7 +17,7 @@ class PaymentServiceTest {
     @Autowired
     private IPaymentService service;
 
-    private final Payment payment = PaymentFactory.createPayment("P101", "CreditCard", 200.00);
+    private final Payment payment = PaymentFactory.createPayment("pay123", 199);
 
     @Test
     void a_create() {
@@ -35,7 +35,7 @@ class PaymentServiceTest {
 
     @Test
     void c_update() {
-        Payment newPayment = new Payment.Builder().copy(payment).setAmount(250.00).build();
+        Payment newPayment = new Payment.Builder().copy(payment).setAmount(250).build();
         Payment updated = service.update(newPayment);
         assertNotNull(updated);
         System.out.println(updated);

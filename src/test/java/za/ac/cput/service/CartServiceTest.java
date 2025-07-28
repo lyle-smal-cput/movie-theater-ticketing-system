@@ -6,7 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Cart;
+import za.ac.cput.domain.Customer;
+import za.ac.cput.factory.CardFactory;
 import za.ac.cput.factory.CartFactory;
+import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.factory.HouseFactory;
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,8 +22,11 @@ class CartServiceTest {
 
     @Autowired
     private ICartService service;
+    private static Customer customer = CustomerFactory.createCustomer(
+            "cust123", "customer", "password", "John", "Doe", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1), CardFactory.createCard("1234567890123456", "12/25", "username"));
 
-    private static final Cart cart = CartFactory.createCart("C123", "User001");
+
+    private static final Cart cart = CartFactory.createCart("cart123", 2, customer);
 
     @Test
     void a_create() {
@@ -37,7 +46,7 @@ class CartServiceTest {
     void c_update() {
         Cart newCart = new Cart.Builder()
                 .copy(cart)
-                .setUserId("User002")
+                .setUser(customer)
                 .build();
         Cart updated = service.update(newCart);
         assertNotNull(updated);

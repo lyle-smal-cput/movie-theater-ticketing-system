@@ -21,7 +21,7 @@ class PaymentControllerTest {
 
     @BeforeAll
     static void setUp() {
-        testPayment = PaymentFactory.createPayment("pay123", "ORD001", 199.99, "Card", "2025-05-25");
+        testPayment = PaymentFactory.createPayment("pay123", 199);
     }
 
     @Test
@@ -46,11 +46,11 @@ class PaymentControllerTest {
     void update() {
         Payment updated = new Payment.Builder()
                 .copy(testPayment)
-                .setAmount(249.99)
+                .setAmount(249)
                 .build();
         Payment result = controller.update(updated);
         assertNotNull(result);
-        assertEquals(249.99, result.getAmount());
+        assertEquals(249, result.getAmount());
         System.out.println("Updated: " + result);
     }
 
