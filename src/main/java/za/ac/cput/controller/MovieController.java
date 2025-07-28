@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/Movie")
 public class MovieController {
 
@@ -24,6 +25,7 @@ public class MovieController {
 
         return service.create(movie);
     }
+
 
     @GetMapping("/read/{movieId}")
     public Movie read(@PathVariable String movieId) {

@@ -1,13 +1,12 @@
 package za.ac.cput.controller;
 /*   Author: C Smith (221242597)
      Date: 25 May 2025 */
+
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Payment;
 import za.ac.cput.factory.PaymentFactory;
-
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,18 +18,10 @@ class PaymentControllerTest {
     private PaymentController controller;
 
     private static Payment testPayment;
-    private static final String INVALID_ID = "INVALID_ID";
 
     @BeforeAll
     static void setUp() {
-        testPayment = PaymentFactory.createPayment(
-                "pay123",
-                "order123",
-                999.99,
-                "CREDIT_CARD",
-                LocalDateTime.now(),
-                "COMPLETED"
-        );
+        testPayment = PaymentFactory.createPayment("pay123", "ORD001", 199.99, "Card", "2025-05-25");
     }
 
     @Test
@@ -55,25 +46,27 @@ class PaymentControllerTest {
     void update() {
         Payment updated = new Payment.Builder()
                 .copy(testPayment)
-                .setStatus("REFUNDED")
+                .setAmount(249.99)
                 .build();
-        assertNotNull(controller.update(updated));
-        System.out.println("Updated: " + updated);
+        Payment result = controller.update(updated);
+        assertNotNull(result);
+        assertEquals(249.99, result.getAmount());
+        System.out.println("Updated: " + result);
     }
 
     @Test
     @Order(4)
+    void getAll() {
+        var all = controller.getAll();
+        assertFalse(all.isEmpty());
+        System.out.println("GetAll: " + all.size() + " payments");
+    }
+
+    @Test
+    @Order(5)
     void delete() {
         boolean success = controller.delete(testPayment.getPaymentId());
         assertTrue(success);
         System.out.println("Deleted: " + testPayment.getPaymentId());
     }
-
-    @Test
-    @Order(5)
-    void getAll() {
-        assertFalse(controller.getAll().isEmpty());
-        System.out.println("GetAll: " + controller.getAll().size() + " payments");
-    }
-
 }

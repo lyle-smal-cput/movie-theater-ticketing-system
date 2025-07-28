@@ -19,7 +19,7 @@ import java.util.List;
 @Entity
 public class Customer extends User {
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "card_number")
+    @JoinColumn(name = "customer_id")  // foreign key column in card table referencing Customer
     private List<Card> cards;
 
     private Customer(Builder builder) {

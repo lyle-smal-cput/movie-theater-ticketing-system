@@ -17,5 +17,5 @@ public interface TheaterRoomRepository extends JpaRepository<TheaterRoom, String
     List<TheaterRoom> findByCapacity(int capacity);
     List<TheaterRoom> findBySeatsAvailable(int seatsAvailable);
     List<TheaterRoom> findByIs3DSupported(boolean is3DSupported);
-    List<TheaterRoom> findByBranchId(String branchId);
+    List<TheaterRoom> findByBranchBranchId(String branchId);
 }
