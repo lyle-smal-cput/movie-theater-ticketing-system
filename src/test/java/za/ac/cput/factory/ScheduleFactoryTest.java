@@ -18,7 +18,7 @@ class ScheduleFactoryTest {
     @Test
     void createSchedule() {
         Branch branch = BranchFactory.createBranch("Canal Walk", 10);
-        Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D");
+        Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D", 150);
         TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("CW9", 9, 48, 10, false, branch);
         Schedule schedule = ScheduleFactory.createSchedule("D84", LocalTime.of(14,25,54), LocalTime.of(17,35,25), LocalDate.of(2025,03,16), false, movie, theaterRoom);
         assertNotNull(schedule);

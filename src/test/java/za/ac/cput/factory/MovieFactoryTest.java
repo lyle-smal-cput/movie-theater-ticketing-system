@@ -12,7 +12,7 @@ class MovieFactoryTest {
 
     @Test
     void createMovie() {
-        Movie movie = new MovieFactory().createMovie("65H", "The Final Destination", "Horror", 96, "Supernatural spin on '90s teen horror", 15, "NewLine", "3D");
+        Movie movie = new MovieFactory().createMovie("65H", "The Final Destination", "Horror", 96, "Supernatural spin on '90s teen horror", 15, "NewLine", "3D", 150);
         assertNotNull(movie);
         System.out.println(movie);
     }

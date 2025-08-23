@@ -46,4 +46,9 @@ public class SeatController {
     public List<Seat> getAll() {
         return service.getAll();
     }
+
+    @GetMapping("/getAll/{theaterRoomId}")
+    public List<Seat> getAll(@PathVariable String theaterRoomId) {
+        return service.getAllByTheaterRoomId(theaterRoomId);
+    }
 }

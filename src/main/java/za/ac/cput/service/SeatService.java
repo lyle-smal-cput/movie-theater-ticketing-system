@@ -43,4 +43,8 @@ public class SeatService implements ISeatService {
     public List<Seat> getAll() {
         return this.repository.findAll();
     }
+
+    public List<Seat> getAllByTheaterRoomId(String id) {
+        return this.repository.findByTheaterRoomTheaterRoomId(id);
+    }
 }

@@ -29,7 +29,6 @@ public class MovieController {
 
     @GetMapping("/read/{movieId}")
     public Movie read(@PathVariable String movieId) {
-
         return service.read(movieId);
     }
 

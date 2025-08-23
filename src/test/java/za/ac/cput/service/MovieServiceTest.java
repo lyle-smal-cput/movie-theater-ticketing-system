@@ -14,7 +14,7 @@ class MovieServiceTest {
     private MovieService service;
 
 
-    private static Movie movie = MovieFactory.createMovie("562", "Blues", "Comedy", 445, "The family of 5", 18, "Studio Dragon", "3D");
+    private static Movie movie = MovieFactory.createMovie("126", "How To Train Your Dragon", "Animation", 120, "A Viking breaks all rules and befriends a dragon he is supposed to kill. He decides to call him Toothless and they join forces to put an end to the terror that wreaks havoc in their respective worlds.", 13, "DreamWorks Animation", "3D", 150);
 
     @Test
     void create() {

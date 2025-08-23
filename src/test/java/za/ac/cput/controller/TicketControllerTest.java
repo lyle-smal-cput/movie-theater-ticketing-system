@@ -29,7 +29,7 @@ class TicketControllerTest {
     Payment payment = PaymentFactory.createPayment("P123", 200);
     LocalTime startTime = LocalTime.of(12, 0);
     LocalTime endTime = LocalTime.of(14, 0);
-    Movie movie = MovieFactory.createMovie("M123", "Inception", "Sci-Fi", 148, "Christopher Nolan", 2010, "Warner Bros", "PG-13");
+    Movie movie = MovieFactory.createMovie("M123", "Inception", "Sci-Fi", 148, "Christopher Nolan", 2010, "Warner Bros", "PG-13", 150);
     Branch branch = BranchFactory.createBranch("Kenilworth",10);
     TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
     Schedule schedule = ScheduleFactory.createSchedule("S123", startTime, endTime, date, false, movie, theaterRoom);

@@ -24,7 +24,7 @@ class ScheduleServiceTest {
 
     private static Branch branch = BranchFactory.createBranch("Canal Walk", 10);
     private static TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("CW9", 9, 48, 10, false, branch);
-    private static Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D");
+    private static Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D", 150);
     private static Schedule schedule = ScheduleFactory.createSchedule("596", LocalTime.of(2, 40), LocalTime.of(4, 40), LocalDate.of(2025,3, 16), false, movie, theaterRoom);
 
 

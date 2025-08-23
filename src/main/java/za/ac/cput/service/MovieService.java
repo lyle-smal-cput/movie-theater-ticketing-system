@@ -38,6 +38,14 @@ public class MovieService implements IMovieService {
         return true;
     }
 
+    public byte[] getImage(String id) {
+        Movie movie = this.repository.findById(id).orElse(null);
+        if (movie != null) {
+            return movie.getImage(); // assuming Movie has getImage()
+        }
+        return null; // or throw an exception if movie not found
+    }
+
     @Override
     public List<Movie> getAll(){
         return this.repository.findAll();
