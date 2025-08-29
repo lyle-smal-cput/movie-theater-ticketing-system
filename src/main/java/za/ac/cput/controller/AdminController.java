@@ -34,6 +34,11 @@ public class AdminController {
         return service.read(userId);
     }
 
+    @GetMapping("/readByEmail/{email}")
+    public List <Admin> readByEmail(@PathVariable String email) {
+        return service.readByEmail(email);
+    }
+
     @PutMapping("/update")
     public Admin update(@RequestBody Admin admin) {
         return service.update(admin);

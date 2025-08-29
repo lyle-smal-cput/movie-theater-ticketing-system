@@ -35,6 +35,10 @@ public class AdminService implements IAdminService {
                 .orElseThrow(() -> new IllegalArgumentException("Admin not found with id: " + string));
     }
 
+    public List <Admin> readByEmail(String string) {
+        return adminRepository.findByEmail(string);
+    }
+
     @Override
     public Admin update(Admin admin) {
         return adminRepository.save(admin);
