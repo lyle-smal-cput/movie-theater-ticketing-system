@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Card;
 import za.ac.cput.factory.CardFactory;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class CardServiceTest {
@@ -16,8 +18,8 @@ class CardServiceTest {
     @Autowired
     private CardService service;
 
-
-    private static Card card = CardFactory.createCard("2536 4563 2536 5436", "854", "Frederic Loewe");
+    LocalDate expiryDate = LocalDate.of(2025, 12, 31);
+    private Card card = CardFactory.createCard("2536 4563 2536 5436", "854", "Frederic Loewe", expiryDate);
 
     @Test
     void create() {

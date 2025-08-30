@@ -19,8 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class CustomerServiceTest {
+    LocalDate expiryDate = LocalDate.of(2025, 12, 31);
     Customer customer = CustomerFactory.createCustomer(
-            "cust123", "customer", "password", "John", "Doe", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1), CardFactory.createCard("1234567890123456", "12/25", "username"));
+            "cust123", "customer", "password", "John", "Doe", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1), CardFactory.createCard("1234567890123456", "12/25", "username", expiryDate));
 
 @Autowired
     private CustomerService customerService;
