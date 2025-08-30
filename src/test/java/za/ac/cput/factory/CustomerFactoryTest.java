@@ -14,8 +14,9 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerFactoryTest {
+    LocalDate expiryDate = LocalDate.of(2025, 12, 31);
     House address = HouseFactory.createHouse("123456789", "Main Street", "28", "Cape Town", "South Africa", (short) 8000);
-    Card card = CardFactory.createCard("1234567890123456", "123", "Lyle Smal");
+    Card card = CardFactory.createCard("1234567890123456", "123", "Lyle Smal", expiryDate);
     Customer customer;
 
     @Test

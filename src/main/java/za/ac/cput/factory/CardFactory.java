@@ -3,6 +3,8 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Card;
 import za.ac.cput.util.Helper;
 
+import java.time.LocalDate;
+
 /* CardFactory.java
     Card Factory class
      Author: RI Onwutali (222369345)
@@ -10,7 +12,7 @@ import za.ac.cput.util.Helper;
 
 public class CardFactory {
 
-    public static Card createCard(String cardNumber, String cvv, String cardHolder) {
+    public static Card createCard(String cardNumber, String cvv, String cardHolder, LocalDate expiryDate){
         if(Helper.isValidCVV(cvv) || Helper.isNullOrEmpty(cvv)){
             return null;
         }
@@ -24,6 +26,7 @@ public class CardFactory {
                       .setCardNumber(cardNumber)
                       .setCvv(cvv)
                       .setCardHolderName(cardHolder)
+                      .setExpiryDate(expiryDate)
                       .build();
 
 

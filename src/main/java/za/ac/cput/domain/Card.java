@@ -2,6 +2,8 @@ package za.ac.cput.domain;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 /* Card.java
      Card POJO class
      Author: RI Onwutali (222369345)
@@ -16,6 +18,7 @@ public class Card {
 
     private String cvv;
     private String cardHolderName;
+    private LocalDate expiryDate;
 
     //TODO: Add expiryDate;
 
@@ -29,6 +32,7 @@ public class Card {
         this.cardNumber = builder.cardNumber;
         this.cvv = builder.cvv;
         this.cardHolderName = builder.cardHolderName;
+        this.expiryDate = builder.expiryDate;
         this.customer = builder.customer;
     }
 
@@ -46,6 +50,8 @@ public class Card {
         return cardHolderName;
     }
 
+    public LocalDate getExpiryDate() {return expiryDate; }
+
     public Customer getCustomer() {
         return customer;
     }
@@ -56,6 +62,7 @@ public class Card {
                 "cardNumber='" + cardNumber + '\'' +
                 ", cvv='" + cvv + '\'' +
                 ", cardHolderName='" + cardHolderName + '\'' +
+                ", expiryDate=" + expiryDate +
                 ", customer=" + (customer != null ? customer.getUserId() : "null") +
                 '}';
     }
@@ -64,14 +71,16 @@ public class Card {
         private String cardNumber;
         private String cvv;
         private String cardHolderName;
+        private LocalDate expiryDate;
         private Customer customer;
 
         public CardBuilder() { }
 
-        public CardBuilder(String cardNumber, String cvv, String cardHolderName) {
+        public CardBuilder(String cardNumber, String cvv, String cardHolderName, LocalDate expiryDate) {
             this.cardNumber = cardNumber;
             this.cvv = cvv;
             this.cardHolderName = cardHolderName;
+            this.expiryDate = expiryDate;
         }
 
         public CardBuilder setCardNumber(String cardNumber) {
@@ -89,6 +98,11 @@ public class Card {
             return this;
         }
 
+        public CardBuilder setExpiryDate(LocalDate expiryDate) {
+            this.expiryDate = expiryDate;
+            return this;
+        }
+
         public CardBuilder setCustomer(Customer customer) {
             this.customer = customer;
             return this;
@@ -98,6 +112,7 @@ public class Card {
             this.cardNumber = card.cardNumber;
             this.cvv = card.cvv;
             this.cardHolderName = card.cardHolderName;
+            this.expiryDate = card.expiryDate;
             this.customer = card.customer;
             return this;
         }
