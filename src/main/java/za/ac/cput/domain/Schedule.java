@@ -11,14 +11,17 @@ import java.time.LocalTime;
 @Entity
 public class Schedule {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String scheduleId;
     private LocalTime startTime;
     private LocalTime endTime;
     private LocalDate date;
     private boolean isFinishedAiring;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "movie_id")
     private  Movie movie;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "theater_id")
     private TheaterRoom theaterRoom;
@@ -97,10 +100,6 @@ public class Schedule {
             this.theaterRoom = theaterRoom;
         }
 
-        public ScheduleBuilder setScheduleId(String scheduleId) {
-            this.scheduleId = scheduleId;
-            return this;
-        }
         public ScheduleBuilder setStartTime(LocalTime startTime) {
             this.startTime = startTime;
             return this;
