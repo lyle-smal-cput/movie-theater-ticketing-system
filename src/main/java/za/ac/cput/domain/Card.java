@@ -17,6 +17,8 @@ public class Card {
     private String cvv;
     private String cardHolderName;
 
+    //TODO: Add expiryDate;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")  // foreign key column
     private Customer customer;

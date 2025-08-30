@@ -1,7 +1,6 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 /* Movie.java
      Movie POJO class
@@ -9,8 +8,11 @@ import jakarta.persistence.Id;
      Date: 11 May 2025 */
 @Entity
 public class Movie {
+
     @Id
-    private String movieId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long movieId;
+
     private String title;
     private String genre;
     private int durationMinutes;
@@ -18,13 +20,16 @@ public class Movie {
     private int ageRestriction;
     private String distributor;
     private String viewType;
+    private int price;
+
+    @Lob
+    private byte[] image;
 
     protected Movie() {
 
     }//end of Movie()
 
     public Movie(MovieBuilder builder){
-        this.movieId = builder.movieId;
         this.title = builder.title;
         this.genre = builder.genre;
         this.durationMinutes = builder.durationMinutes;
@@ -32,9 +37,11 @@ public class Movie {
         this.ageRestriction = builder.ageRestriction;
         this.distributor = builder.distributor;
         this.viewType = builder.viewType;
+        this.price = builder.price;
+        this.image = builder.image;
     }//end of Movie(MovieBuilder)
 
-    public String getMovieId() {
+    public Long getMovieId() {
         return movieId;
     }
     public String getTitle() {
@@ -58,6 +65,10 @@ public class Movie {
     public String getViewType() {
         return viewType;
     }
+    public int getPrice() {return price;}
+    public byte[] getImage() {
+        return image;
+    }
 
     @Override
     public String toString() {
@@ -70,11 +81,12 @@ public class Movie {
                 ", ageRestriction=" + ageRestriction +
                 ", distributor='" + distributor + '\'' +
                 ", viewType='" + viewType + '\'' +
+                ", price=" + price +
                 '}';
     }//end of toString
 
     public static class MovieBuilder {
-        private String movieId;
+        private Long movieId;
         private String title;
         private String genre;
         private int durationMinutes;
@@ -82,13 +94,15 @@ public class Movie {
         private int ageRestriction;
         private String distributor;
         private String viewType;
+        private int price;
+        private byte[] image;
 
         public MovieBuilder(){
 
         }
 
-        public MovieBuilder(String movieId, String title, String genre, int durationMinutes, String description,
-                            int ageRestriction, String distributor, String viewType){
+        public MovieBuilder(Long movieId, String title, String genre, int durationMinutes, String description,
+                            int ageRestriction, String distributor, String viewType, int price,  byte[] image) {
             this.movieId = movieId;
             this.title = title;
             this.genre = genre;
@@ -97,12 +111,15 @@ public class Movie {
             this.ageRestriction = ageRestriction;
             this.distributor = distributor;
             this.viewType = viewType;
+            this.price = price;
+            this.image = image;
         }
 
-        public MovieBuilder setMovieId(String movieId) {
+        public MovieBuilder MovieId(Long movieId) {
             this.movieId = movieId;
             return this;
         }
+
         public MovieBuilder setTitle(String title) {
             this.title = title;
             return this;
@@ -132,6 +149,16 @@ public class Movie {
             return this;
         }
 
+        public MovieBuilder setPrice(int price) {
+            this.price = price;
+            return this;
+        }
+
+        public MovieBuilder setImage(byte[] image) {
+            this.image = image;
+            return this;
+        }
+
         public MovieBuilder copy(Movie movie){
             this.movieId = movie.movieId;
             this.title = movie.title;
@@ -141,6 +168,8 @@ public class Movie {
             this.ageRestriction = movie.ageRestriction;
             this.distributor = movie.distributor;
             this.viewType = movie.viewType;
+            this.price = movie.price;
+            this.image = movie.image;
             return this;
         }
         public Movie build(){

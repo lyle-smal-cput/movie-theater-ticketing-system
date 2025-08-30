@@ -1,5 +1,8 @@
 package za.ac.cput.controller;
-
+/* Card Controller.java
+     Card Controller class
+     Author: RI Onwutali (222369345)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.service.CardService;
@@ -18,7 +21,7 @@ public class CardController {
             this.service = service;
         }
 
-        @PostMapping("create")
+        @PostMapping("/create")
         public Card create(@RequestBody Card card) {
 
             return service.create(card);

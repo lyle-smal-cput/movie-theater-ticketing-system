@@ -46,4 +46,9 @@ public class TheaterRoomController {
     public List<TheaterRoom> getAll() {
         return service.getAll();
     }
+
+    @GetMapping("/getAll/{branchId}")
+    public List<TheaterRoom> getAll(@PathVariable String branchId) {
+        return service.findByBranchId(branchId);
+    }
 }

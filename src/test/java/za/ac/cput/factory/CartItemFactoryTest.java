@@ -21,7 +21,7 @@ public class CartItemFactoryTest {
         Card card = new Card.CardBuilder().setCardNumber("1234567890123456").setCvv("123").setCardHolderName("JohnDoe").build();
         Customer customer =CustomerFactory.createCustomer("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", house, "+2782123456", "male", LocalDate.of(2004, 1, 26), card);
         Cart cart = CartFactory.createCart("cart123", 2, customer);
-        Movie movie = MovieFactory.createMovie("Movie1","Example Movie", "Action", 120,"An action movie", 13, "Director Name", "2D");
+        Movie movie = MovieFactory.createMovie("Movie1","Example Movie", "Action", 120,"An action movie", 13, "Director Name", "2D", 150);
         Branch branch = BranchFactory.createBranch("Cape Town", 5);
         TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
         LocalTime startTime = LocalTime.of(12,0);

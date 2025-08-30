@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cartItem")
+@CrossOrigin(origins = "http://localhost:5173")
 public class CartItemController {
 
     private final CartItemService service;
@@ -20,6 +21,7 @@ public class CartItemController {
 
     @PostMapping("/create")
     public CartItem create(@RequestBody CartItem cartItem) {
+        System.out.println("Received cartItem: " + cartItem);
         return service.create(cartItem);
     }
 

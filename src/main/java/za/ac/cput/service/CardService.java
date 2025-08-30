@@ -1,5 +1,8 @@
 package za.ac.cput.service;
-
+/* Card Service.java
+     Card Service class
+     Author: RI Onwutali (222369345)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Card;

@@ -25,7 +25,7 @@ class CartItemControllerTest {
     private static Cart testCart = CartFactory.createCart("cart456", 1, customer);
     private static Branch branch = BranchFactory.createBranch("Canal Walk", 10);
     private static TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("CW9", 9, 48, 10, false, branch);
-    private static Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D");
+    private static Movie movie = MovieFactory.createMovie("MO89","Venom", "Sci-Fi",  89, "The never ending adventure", 17, "Dragon Studio", "2D", 150);
     public static Schedule schedule = ScheduleFactory.createSchedule("546", LocalTime.of(2, 23), LocalTime.of(3, 30), LocalDate.of(2025, 03, 16), false, movie, theaterRoom);
 
 

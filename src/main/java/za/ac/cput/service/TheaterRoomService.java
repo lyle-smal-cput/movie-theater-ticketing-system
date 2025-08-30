@@ -43,4 +43,8 @@ public class TheaterRoomService implements ITheaterRoomService{
     public List<TheaterRoom> getAll() {
         return this.repository.findAll();
     }
+
+    public  List<TheaterRoom> findByBranchId(String id) {
+        return this.repository.findByBranchBranchId(id);
+    }
 }
