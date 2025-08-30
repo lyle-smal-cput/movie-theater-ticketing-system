@@ -1,12 +1,14 @@
 package za.ac.cput.service;
-
+/* Movie Service.java
+     Schedule Service class
+     Author: RI Onwutali (222369345)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.Card;
 import za.ac.cput.domain.Movie;
 import za.ac.cput.repository.MovieRepository;
-
 import java.util.List;
+
 @Service
 public class MovieService implements IMovieService {
 
@@ -23,7 +25,7 @@ public class MovieService implements IMovieService {
     }
 
     @Override
-    public Movie read (String id){
+    public Movie read (Long id){
         return this.repository.findById(id).orElse(null);
     }
 
@@ -33,12 +35,22 @@ public class MovieService implements IMovieService {
     }
 
     @Override
-    public boolean delete(String id){
+    public boolean delete(Long id){
         this.repository.deleteById(id);
         return true;
     }
 
-    public byte[] getImage(String id) {
+    @Override
+    public List<Movie> findByGenre(String genre){
+        return this.repository.findByGenre(genre);
+    }
+
+    @Override
+    public List<Movie> findByTitle(String title){
+        return this.repository.findByTitle(title);
+    }
+
+    public byte[] getImage(Long id) {
         Movie movie = this.repository.findById(id).orElse(null);
         if (movie != null) {
             return movie.getImage(); // assuming Movie has getImage()

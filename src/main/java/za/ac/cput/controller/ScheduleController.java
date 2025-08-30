@@ -1,5 +1,8 @@
 package za.ac.cput.controller;
-
+/* Schedule Controller.java
+     Schedule Controller class
+     Author: RI Onwutali (222369345)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.Schedule;

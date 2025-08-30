@@ -9,12 +9,11 @@ import za.ac.cput.util.Helper;
      Date: 18 May 2025 */
 public class MovieFactory {
 
-public static Movie createMovie(String movieId, String title, String genre, int durationMinutes, String description, int ageRestriction, String distributor, String viewType, int price, byte[] image) {
-    if(Helper.isNullOrEmpty(movieId) || Helper.isNullOrEmpty(title) || Helper.isNullOrEmpty(genre) || Helper.isNullOrEmpty(distributor) || Helper.isNullOrEmpty(viewType) || price <= 0){
+public static Movie createMovie(String title, String genre, int durationMinutes, String description, int ageRestriction, String distributor, String viewType, int price, byte[] image) {
+    if(Helper.isNullOrEmpty(title) || Helper.isNullOrEmpty(genre) || Helper.isNullOrEmpty(distributor) || Helper.isNullOrEmpty(viewType) || price <= 0){
         return null;
     }
    return new Movie.MovieBuilder()
-           .setMovieId(movieId)
            .setTitle(title)
            .setGenre(genre)
            .setDurationMinutes(durationMinutes)

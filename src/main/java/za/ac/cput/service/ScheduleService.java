@@ -1,12 +1,14 @@
 package za.ac.cput.service;
-
+/* Schedule Service.java
+     Schedule Service class
+     Author: RI Onwutali (222369345)
+     Date: 25 May 2025 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.Card;
 import za.ac.cput.domain.Schedule;
 import za.ac.cput.repository.ScheduleRepository;
-
 import java.util.List;
+
 @Service
 public class ScheduleService implements IScheduleService {
     private ScheduleRepository repository;

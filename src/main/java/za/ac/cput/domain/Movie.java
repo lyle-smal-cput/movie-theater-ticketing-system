@@ -1,8 +1,6 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 
 /* Movie.java
      Movie POJO class
@@ -10,8 +8,11 @@ import jakarta.persistence.Lob;
      Date: 11 May 2025 */
 @Entity
 public class Movie {
+
     @Id
-    private String movieId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long movieId;
+
     private String title;
     private String genre;
     private int durationMinutes;
@@ -29,7 +30,6 @@ public class Movie {
     }//end of Movie()
 
     public Movie(MovieBuilder builder){
-        this.movieId = builder.movieId;
         this.title = builder.title;
         this.genre = builder.genre;
         this.durationMinutes = builder.durationMinutes;
@@ -38,10 +38,10 @@ public class Movie {
         this.distributor = builder.distributor;
         this.viewType = builder.viewType;
         this.price = builder.price;
-        this.image =builder.image;
+        this.image = builder.image;
     }//end of Movie(MovieBuilder)
 
-    public String getMovieId() {
+    public Long getMovieId() {
         return movieId;
     }
     public String getTitle() {
@@ -66,7 +66,6 @@ public class Movie {
         return viewType;
     }
     public int getPrice() {return price;}
-
     public byte[] getImage() {
         return image;
     }
@@ -87,7 +86,7 @@ public class Movie {
     }//end of toString
 
     public static class MovieBuilder {
-        private String movieId;
+        private Long movieId;
         private String title;
         private String genre;
         private int durationMinutes;
@@ -102,7 +101,7 @@ public class Movie {
 
         }
 
-        public MovieBuilder(String movieId, String title, String genre, int durationMinutes, String description,
+        public MovieBuilder(Long movieId, String title, String genre, int durationMinutes, String description,
                             int ageRestriction, String distributor, String viewType, int price,  byte[] image) {
             this.movieId = movieId;
             this.title = title;
@@ -116,10 +115,11 @@ public class Movie {
             this.image = image;
         }
 
-        public MovieBuilder setMovieId(String movieId) {
+        public MovieBuilder MovieId(Long movieId) {
             this.movieId = movieId;
             return this;
         }
+
         public MovieBuilder setTitle(String title) {
             this.title = title;
             return this;

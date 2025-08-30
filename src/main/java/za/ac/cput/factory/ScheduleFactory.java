@@ -14,12 +14,11 @@ import java.time.LocalTime;
 
 public class ScheduleFactory {
 
-    public static Schedule createSchedule(String scheduleId, LocalTime startTime, LocalTime endTime, LocalDate date, boolean isFinishedAiring, Movie movie, TheaterRoom theaterRoom) {
-        if(Helper.isNullOrEmpty(scheduleId)  || startTime == null || endTime == null || date == null || isFinishedAiring || movie == null || theaterRoom == null)  {
+    public static Schedule createSchedule(LocalTime startTime, LocalTime endTime, LocalDate date, boolean isFinishedAiring, Movie movie, TheaterRoom theaterRoom) {
+        if(startTime == null || endTime == null || date == null || isFinishedAiring || movie == null || theaterRoom == null)  {
             return null;
         }
         return new Schedule.ScheduleBuilder()
-                .setScheduleId(scheduleId)
                 .setStartTime(startTime)
                 .setEndTime(endTime)
                 .setDate(date)
