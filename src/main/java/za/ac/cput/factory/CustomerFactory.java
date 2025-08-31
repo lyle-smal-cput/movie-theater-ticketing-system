@@ -14,10 +14,10 @@ import java.time.LocalDate;
 
 public class CustomerFactory {
 
-    public static Customer createCustomer(String userId, String username, String password, String firstName,
+    public static Customer createCustomer( String username, String password, String firstName,
                                           String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth, Card card) {
         //Validates if userId, username, password, firstName, lastName, email, address, cellphone, gender, dateOfBirth and card is null or empty
-        if (Helper.isNullOrEmpty(userId) || Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password) ||
+        if (Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password) ||
                 Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) ||
                 address == null || Helper.isNullOrEmpty(cellphoneNumber) || Helper.isNullOrEmpty(gender)){
             return null;
@@ -29,7 +29,6 @@ public class CustomerFactory {
         }
 
         return new Customer.Builder()
-                .setUserId(userId)
                 .setUsername(username)
                 .setPassword(password)
                 .setFirstName(firstName)

@@ -8,7 +8,7 @@ import za.ac.cput.domain.*;
 import za.ac.cput.util.Helper;
 
 public class TicketFactory {
-    public static Ticket createTicket(String ticketId, User user, Payment payment, Schedule schedule, Seat seat) {
+    public static Ticket createTicket(String ticketId, Customer user, Payment payment, Schedule schedule, Seat seat) {
 
         if (Helper.isNullOrEmpty(ticketId)) {
             return null;

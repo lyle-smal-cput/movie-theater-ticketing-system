@@ -16,10 +16,7 @@ public class HouseFactory {
             return null;
         }
 
-        String addressId = Helper.generateId();
-
         return new House.Builder()
-                .setAddressId(addressId)
                 .setStreetNumber(streetNumber)
                 .setStreetName(streetName)
                 .setSuburb(suburb)

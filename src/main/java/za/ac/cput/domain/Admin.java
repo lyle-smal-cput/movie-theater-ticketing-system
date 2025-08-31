@@ -1,6 +1,9 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
@@ -10,9 +13,12 @@ import java.time.LocalDate;
      Date: 11 May 2025 */
 @Entity
 public class Admin extends User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long userId;
 
     private Admin(Builder builder) {
-        this.userId = Long.valueOf(builder.userId);
+        this.userId = builder.userId;
         this.username = builder.username;
         this.password = builder.password;
         this.firstName = builder.firstName;
@@ -27,6 +33,11 @@ public class Admin extends User {
     protected Admin() {
 
     }
+
+    public Long getUserId() {
+        return userId;
+    }
+
 
     @Override
     public String toString() {
@@ -44,7 +55,7 @@ public class Admin extends User {
     }
 
     public static class Builder {
-        private String userId;
+        private Long userId;
         private String username;
         private String password;
         private String firstName;
@@ -55,7 +66,7 @@ public class Admin extends User {
         private String gender;
         private LocalDate dateOfBirth;
 
-        public Builder setUserId(String userId) {
+        public Builder setUserId(Long userId) {
             this.userId = userId;
             return this;
         }
@@ -106,7 +117,7 @@ public class Admin extends User {
         }
 
         public Builder copy(Admin admin) {
-            this.userId = String.valueOf(admin.userId);
+            this.userId = admin.userId;
             this.username = admin.username;
             this.password = admin.password;
             this.firstName = admin.firstName;

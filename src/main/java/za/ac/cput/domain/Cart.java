@@ -18,7 +18,7 @@ public class Cart {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Customer customer;
 
     protected Cart() {
     }
@@ -26,7 +26,7 @@ public class Cart {
     private Cart(Builder builder) {
         this.cartId = Long.valueOf(builder.cartId);
         this.quantity = builder.quantity;
-        this.user = builder.user;
+        this.customer = builder.customer;
     }
 
     public Long getCartId() {
@@ -37,8 +37,8 @@ public class Cart {
         return quantity;
     }
 
-    public User getUser() {
-        return user;
+    public User getCustomer() {
+        return customer;
     }
 
     @Override
@@ -46,14 +46,14 @@ public class Cart {
         return "Cart{" +
                 "cartId='" + cartId + '\'' +
                 ", quantity=" + quantity +
-                ", user=" + user +
+                ", user=" + customer +
                 '}';
     }
 
     public static class Builder {
         private String cartId;
         private int quantity;
-        private User user;
+        private Customer customer;
 
         public Builder setCartId(String cartId) {
             this.cartId = cartId;
@@ -65,15 +65,15 @@ public class Cart {
             return this;
         }
 
-        public Builder setUser(User user) {
-            this.user = user;
+        public Builder setUser(Customer customer) {
+            this.customer = customer;
             return this;
         }
 
         public Builder copy(Cart cart) {
             this.cartId = String.valueOf(cart.cartId);
             this.quantity = cart.quantity;
-            this.user = cart.user;
+            this.customer = cart.customer;
             return this;
         }
 

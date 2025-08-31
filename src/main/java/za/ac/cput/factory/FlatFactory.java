@@ -17,10 +17,7 @@ public class FlatFactory {
             return null;
         }
 
-        String addressId = Helper.generateId();
-
         return new Flat.Builder()
-                .setAddressId(addressId)
                 .setStreetNumber(streetNumber)
                 .setStreetName(streetName)
                 .setSuburb(suburb)

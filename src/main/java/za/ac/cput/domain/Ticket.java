@@ -14,7 +14,7 @@ public class Ticket {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Customer user;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "payment_id")
@@ -72,7 +72,7 @@ public class Ticket {
 
     public static class Builder {
         private String ticketId;
-        private User user;
+        private Customer user;
         private Payment payment;
         private Schedule schedule;
         private Seat seat;
@@ -82,7 +82,7 @@ public class Ticket {
             return this;
         }
 
-        public Builder setUser(User user) {
+        public Builder setUser(Customer user) {
             this.user = user;
             return this;
         }

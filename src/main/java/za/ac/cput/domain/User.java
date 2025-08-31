@@ -9,12 +9,8 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long userId;
+@MappedSuperclass
+public abstract class User {
     protected String username;
     protected String password;
     protected String firstName;
@@ -27,10 +23,6 @@ public class User {
     protected String cellphoneNumber;
     protected String gender;
     protected LocalDate dateOfBirth;
-
-    public Long getUserId() {
-        return userId;
-    }
 
     public String getUsername() {
         return username;

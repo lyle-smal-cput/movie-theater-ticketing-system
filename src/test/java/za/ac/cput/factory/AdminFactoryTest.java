@@ -18,7 +18,7 @@ class AdminFactoryTest {
 
     @Test
     void createAdmin() {
-        admin = AdminFactory.createAdmin("223236012", "lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "+2782123456", "male", LocalDate.of(2004, 1, 26));
+        admin = AdminFactory.createAdmin("lylesmal", "12345678", "Lyle", "Smal", "lylesmal@gmail.com", address, "+2782123456", "male", LocalDate.of(2004, 1, 26));
         assertNotNull(admin);
         System.out.println(admin.toString());
     }

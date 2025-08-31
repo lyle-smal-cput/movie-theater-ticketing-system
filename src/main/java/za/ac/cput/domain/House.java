@@ -12,7 +12,7 @@ public class House extends Address {
     }
 
     private House(Builder builder) {
-        this.addressId = Long.valueOf(builder.addressId);
+        this.addressId = builder.addressId;
         this.streetNumber = builder.streetNumber;
         this.streetName = builder.streetName;
         this.suburb = builder.suburb;
@@ -35,7 +35,7 @@ public class House extends Address {
     }
 
     public static class Builder {
-        private String addressId;
+        private Long addressId;
         private String streetNumber;
         private String streetName;
         private String suburb;
@@ -43,7 +43,7 @@ public class House extends Address {
         private String country;
         private short postalCode;
 
-        public Builder setAddressId(String addressId) {
+        public Builder setAddressId(Long addressId) {
             this.addressId = addressId;
             return this;
         }
@@ -77,7 +77,7 @@ public class House extends Address {
         }
 
         public Builder copy(House house) {
-            this.addressId = String.valueOf(house.addressId);
+            this.addressId = house.addressId;
             this.streetNumber = house.streetNumber;
             this.streetName = house.streetName;
             this.suburb = house.suburb;
