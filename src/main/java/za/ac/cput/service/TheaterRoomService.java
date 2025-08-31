@@ -24,7 +24,7 @@ public class TheaterRoomService implements ITheaterRoomService{
     }
 
     @Override
-    public TheaterRoom read(String id) {
+    public TheaterRoom read(Long id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class TheaterRoomService implements ITheaterRoomService{
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.repository.deleteById(id);
         return true;
     }
@@ -44,7 +44,7 @@ public class TheaterRoomService implements ITheaterRoomService{
         return this.repository.findAll();
     }
 
-    public  List<TheaterRoom> findByBranchId(String id) {
+    public  List<TheaterRoom> findByBranchId(Long id) {
         return this.repository.findByBranchBranchId(id);
     }
 }

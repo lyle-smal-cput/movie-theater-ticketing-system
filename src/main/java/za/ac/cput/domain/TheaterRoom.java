@@ -9,7 +9,8 @@ import jakarta.persistence.*;
 @Entity
 public class TheaterRoom {
     @Id
-    private String theaterRoomId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long theaterRoomId;
     private int roomNumber;
     private int capacity;
     private int seatsAvailable;
@@ -22,7 +23,7 @@ public class TheaterRoom {
     }
 
     private TheaterRoom(Builder builder) {
-        this.theaterRoomId = builder.theaterRoomId;
+        this.theaterRoomId = Long.valueOf(builder.theaterRoomId);
         this.roomNumber = builder.roomNumber;
         this.capacity = builder.capacity;
         this.seatsAvailable = builder.seatsAvailable;
@@ -30,7 +31,7 @@ public class TheaterRoom {
         this.branch = builder.branch;
     }
 
-    public String getTheaterRoomId() {
+    public Long getTheaterRoomId() {
         return theaterRoomId;
     }
 
@@ -105,7 +106,7 @@ public class TheaterRoom {
         }
 
         public Builder copy(TheaterRoom theaterRoom) {
-            this.theaterRoomId = theaterRoom.theaterRoomId;
+            this.theaterRoomId = String.valueOf(theaterRoom.theaterRoomId);
             this.roomNumber = theaterRoom.roomNumber;
             this.capacity = theaterRoom.capacity;
             this.seatsAvailable = theaterRoom.seatsAvailable;

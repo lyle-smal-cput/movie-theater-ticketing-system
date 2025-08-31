@@ -30,7 +30,7 @@ public class AdminController {
 
 
     @GetMapping("/read/{userId}")
-    public Admin read(@PathVariable String userId) {
+    public Admin read(@PathVariable Long userId) {
         return service.read(userId);
     }
 
@@ -45,7 +45,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/delete/{userId}")
-    public boolean delete(@PathVariable String userId) {
+    public boolean delete(@PathVariable Long userId) {
         return service.delete(userId);
     }
 

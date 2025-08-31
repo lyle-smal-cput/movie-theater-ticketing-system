@@ -10,10 +10,11 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
-    protected String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long userId;
     protected String username;
     protected String password;
     protected String firstName;
@@ -27,7 +28,7 @@ public class User {
     protected String gender;
     protected LocalDate dateOfBirth;
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 

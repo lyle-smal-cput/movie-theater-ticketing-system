@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.Card;
 import za.ac.cput.factory.CardFactory;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -21,7 +23,8 @@ class CardControllerTest {
     @Autowired
     TestRestTemplate restTemplate;
 
-    private static Card card = new CardFactory().createCard("7456 6235 6984 5336", "856", "Ruth Ifeoma");
+    static LocalDate expiryDate = LocalDate.of(2025, 12, 31);
+    private static Card card = new CardFactory().createCard("7456 6235 6984 5336", "856", "Ruth Ifeoma", expiryDate);
 
     private static final String BASE_URL = "http://localhost:8080/movie-theater-ticketing-system/card";
 

@@ -24,7 +24,7 @@ public class BranchController {
     }
 
     @GetMapping("/read/{branchId}")
-    public Branch read(@PathVariable String branchId) {
+    public Branch read(@PathVariable Long branchId) {
        return service.read(branchId);
     }
 
@@ -34,7 +34,7 @@ public class BranchController {
     }
 
     @DeleteMapping("/delete/{branchId}")
-    public boolean delete(@PathVariable String branchId) {
+    public boolean delete(@PathVariable Long branchId) {
        return service.delete(branchId);
     }
 

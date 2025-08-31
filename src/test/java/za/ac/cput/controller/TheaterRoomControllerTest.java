@@ -21,7 +21,7 @@ class TheaterRoomControllerTest {
     private final TheaterRoomController controller;
 
     Branch branch = BranchFactory.createBranch("Kenilworth", 10);
-    TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
+    TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("123", 10, 100, 50, true, branch);
 
     @Autowired
     TheaterRoomControllerTest(TheaterRoomController controller) {

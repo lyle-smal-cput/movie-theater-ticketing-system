@@ -28,7 +28,7 @@ public class ScheduleController {
     }
 
     @GetMapping("/read/{scheduleId}")
-    public Schedule read(@PathVariable String scheduleId) {
+    public Schedule read(@PathVariable Long scheduleId) {
 
         return service.read(scheduleId);
     }
@@ -40,7 +40,7 @@ public class ScheduleController {
     }
 
     @DeleteMapping("/delete/{scheduleId}")
-    public void delete(@PathVariable String scheduleId) {
+    public void delete(@PathVariable Long scheduleId) {
 
         service.delete(scheduleId);
     }

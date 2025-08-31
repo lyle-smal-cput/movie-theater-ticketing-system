@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class Admin extends User {
 
     private Admin(Builder builder) {
-        this.userId = builder.userId;
+        this.userId = Long.valueOf(builder.userId);
         this.username = builder.username;
         this.password = builder.password;
         this.firstName = builder.firstName;
@@ -106,7 +106,7 @@ public class Admin extends User {
         }
 
         public Builder copy(Admin admin) {
-            this.userId = admin.userId;
+            this.userId = String.valueOf(admin.userId);
             this.username = admin.username;
             this.password = admin.password;
             this.firstName = admin.firstName;

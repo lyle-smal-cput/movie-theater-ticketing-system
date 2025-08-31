@@ -10,10 +10,10 @@ import za.ac.cput.domain.Seat;
 
 import java.util.List;
 @Repository
-public interface SeatRepository extends JpaRepository<Seat, String> {
+public interface SeatRepository extends JpaRepository<Seat, Long> {
 
-    Seat findBySeatId(String seatId);
+    Seat findBySeatId(Long seatId);
     List<Seat> findBySeatNumber(int seatNumber);
     List<Seat> findByIsAvailable(boolean isAvailable);
-    List<Seat> findByTheaterRoomTheaterRoomId(String theaterRoomId);
+    List<Seat> findByTheaterRoomTheaterRoomId(Long theaterRoomId);
 }

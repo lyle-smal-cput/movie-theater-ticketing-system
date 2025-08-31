@@ -8,11 +8,11 @@ import za.ac.cput.domain.Flat;
 
 import java.util.List;
 
-public interface IBranchService extends IService<Branch, String> {
+public interface IBranchService extends IService<Branch, Long> {
     Branch create(Branch branch);
-    Branch read(String branchId);
+    Branch read(Long branchId);
     Branch update(Branch branch);
-    boolean delete(String branchId);
+    boolean delete(Long branchId);
     List<Branch> getAll();
 }
 

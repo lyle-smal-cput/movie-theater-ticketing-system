@@ -25,7 +25,7 @@ public class HouseController {
     }
 
     @GetMapping("/read/{addressId}")
-    public House read(@PathVariable String addressId) {
+    public House read(@PathVariable Long addressId) {
         return service.read(addressId);
     }
 
@@ -35,7 +35,7 @@ public class HouseController {
     }
 
     @DeleteMapping("/delete/{addressId}")
-    public boolean delete(@PathVariable String addressId) {
+    public boolean delete(@PathVariable Long addressId) {
         return service.delete(addressId);
     }
 

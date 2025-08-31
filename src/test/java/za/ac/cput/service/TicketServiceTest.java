@@ -24,16 +24,16 @@ class TicketServiceTest {
 
     LocalDate date = LocalDate.of(2023, 10, 10);
     House house = HouseFactory.createHouse("H123", "12", "Main Road", "Athlone", "Cape Town", (short) 7764);
-    Card card = CardFactory.createCard("C123", "774", "1234567890123456");
+    Card card = CardFactory.createCard("C123", "774", "1234567890123456", date);
     Customer customer = CustomerFactory.createCustomer("U123", "John Doe", "222", "John",
             "Doe", "jdoe@gmail.com", house, "0795003139", "Male", date, card);
     Payment payment = PaymentFactory.createPayment("P123", 200);
     LocalTime startTime = LocalTime.of(12, 0);
     LocalTime endTime = LocalTime.of(14, 0);
-    Movie movie = MovieFactory.createMovie("M123", "Inception", "Sci-Fi", 148, "Christopher Nolan", 2010, "Warner Bros", "PG-13", 160);
+    Movie movie = MovieFactory.createMovie("M123", "Inception", 60, "148", 16, "2010", "Warner Bros", 160, null);
     Branch branch = BranchFactory.createBranch("Kenilworth",10);
     TheaterRoom theaterRoom = TheaterRoomFactory.createTheaterRoom("TR123", 10, 100, 50, true, branch);
-    Schedule schedule = ScheduleFactory.createSchedule("S123", startTime, endTime, date, false, movie, theaterRoom);
+    Schedule schedule = ScheduleFactory.createSchedule(startTime, startTime, date, false, movie, theaterRoom);
     Seat seat = SeatFactory.createSeat("S123", 1, true, theaterRoom);
     Ticket ticket = TicketFactory.createTicket("123", customer, payment, schedule, seat);
 

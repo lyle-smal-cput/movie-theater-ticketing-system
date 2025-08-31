@@ -10,12 +10,12 @@ import za.ac.cput.domain.TheaterRoom;
 
 import java.util.List;
 @Repository
-public interface TheaterRoomRepository extends JpaRepository<TheaterRoom, String> {
+public interface TheaterRoomRepository extends JpaRepository<TheaterRoom, Long> {
 
-    TheaterRoom findByTheaterRoomId(String theaterRoomId);
+    TheaterRoom findByTheaterRoomId(Long theaterRoomId);
     List<TheaterRoom> findByRoomNumber(int roomNumber);
     List<TheaterRoom> findByCapacity(int capacity);
     List<TheaterRoom> findBySeatsAvailable(int seatsAvailable);
     List<TheaterRoom> findByIs3DSupported(boolean is3DSupported);
-    List<TheaterRoom> findByBranchBranchId(String branchId);
+    List<TheaterRoom> findByBranchBranchId(Long branchId);
 }

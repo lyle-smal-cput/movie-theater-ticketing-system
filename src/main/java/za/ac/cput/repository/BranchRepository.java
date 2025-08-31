@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Branch;
 
 @Repository
-public interface BranchRepository extends JpaRepository<Branch, String> {
+public interface BranchRepository extends JpaRepository<Branch, Long> {
     Branch findByLocation(String location);
     Branch findByNumberOfTheaterRooms(int numberOfTheaterRooms);
 }

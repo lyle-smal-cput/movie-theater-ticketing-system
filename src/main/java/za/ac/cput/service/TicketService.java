@@ -22,7 +22,7 @@ public class TicketService implements ITicketService{
     }
 
     @Override
-    public Ticket read(String id) {
+    public Ticket read(Long id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -32,7 +32,7 @@ public class TicketService implements ITicketService{
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.repository.deleteById(id);
         return true;
     }

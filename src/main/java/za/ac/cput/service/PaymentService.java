@@ -19,7 +19,7 @@ public class PaymentService implements IPaymentService {
     }
 
     @Override
-    public Payment read(String id) {
+    public Payment read(Long id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -29,7 +29,7 @@ public class PaymentService implements IPaymentService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.repository.deleteById(id);
         return true;
     }

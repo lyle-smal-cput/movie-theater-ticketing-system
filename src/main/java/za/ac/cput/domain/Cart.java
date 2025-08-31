@@ -12,8 +12,8 @@ import jakarta.persistence.*;
 @Entity
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String cartId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cartId;
     private int quantity;
 
     @ManyToOne
@@ -24,12 +24,12 @@ public class Cart {
     }
 
     private Cart(Builder builder) {
-        this.cartId = builder.cartId;
+        this.cartId = Long.valueOf(builder.cartId);
         this.quantity = builder.quantity;
         this.user = builder.user;
     }
 
-    public String getCartId() {
+    public Long getCartId() {
         return cartId;
     }
 
@@ -71,7 +71,7 @@ public class Cart {
         }
 
         public Builder copy(Cart cart) {
-            this.cartId = cart.cartId;
+            this.cartId = String.valueOf(cart.cartId);
             this.quantity = cart.quantity;
             this.user = cart.user;
             return this;

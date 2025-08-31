@@ -26,7 +26,7 @@ public class CartItemController {
     }
 
     @GetMapping("/read/{id}")
-    public CartItem read(@PathVariable String id) {
+    public CartItem read(@PathVariable Long id) {
         return service.read(id);
     }
 
@@ -36,7 +36,7 @@ public class CartItemController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id) {
+    public boolean delete(@PathVariable Long id) {
         return service.delete(id);
     }
 

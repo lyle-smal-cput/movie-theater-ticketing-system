@@ -24,7 +24,7 @@ public class BranchService implements IBranchService {
     }
 
     @Override
-    public Branch read(String branchId) {
+    public Branch read(Long branchId) {
         return this.repository.findById(branchId).orElse(null);
     }
 
@@ -36,7 +36,7 @@ public class BranchService implements IBranchService {
     }
 
     @Override
-    public boolean delete(String branchId) {
+    public boolean delete(Long branchId) {
         if (this.repository.existsById(branchId)) {
             this.repository.deleteById(branchId);
             return true;

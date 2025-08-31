@@ -15,13 +15,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, String> {
-    Customer findByUserId(String userId);
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+    Customer findByUserId(Long userId);
     List<Customer> findByUsername(String username);
     List<Customer> findByFirstName(String firstName);
     List<Customer> findByLastName(String lastName);
     List<Customer> findByEmail(String email);
-    List<Admin> findByAddressAddressId(String addressId);
+    List<Admin> findByAddressAddressId(Long addressId);
     List<Customer> findAdminByCellphoneNumber(String cellphoneNumber);
     List<Customer> findByGender(String gender);
     List<Customer> findByDateOfBirth(LocalDate dateOfBirth);

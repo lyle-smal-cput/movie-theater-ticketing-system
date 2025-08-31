@@ -10,12 +10,12 @@ import za.ac.cput.domain.Ticket;
 
 import java.util.List;
 @Repository
-public interface TicketRepository extends JpaRepository<Ticket, String> {
+public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
-    Ticket findByTicketId(String ticketId);
-    List<Ticket> findByPaymentPaymentId(String paymentId);  // if Payment entity has paymentId field
+    Ticket findByTicketId(Long ticketId);
+    List<Ticket> findByPaymentPaymentId(Long paymentId);  // if Payment entity has paymentId field
 
-    List<Ticket> findByScheduleScheduleId(String scheduleId);  // if Schedule entity has scheduleId field
+    List<Ticket> findByScheduleScheduleId(Long scheduleId);  // if Schedule entity has scheduleId field
 
-    List<Ticket> findBySeatSeatId(String seatId);
+    List<Ticket> findBySeatSeatId(Long seatId);
 }

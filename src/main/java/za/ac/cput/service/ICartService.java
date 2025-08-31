@@ -8,6 +8,6 @@ import za.ac.cput.domain.Cart;
 
 import java.util.List;
 
-public interface ICartService extends IService<Cart, String> {
+public interface ICartService extends IService<Cart, Long> {
     List<Cart>getAll();
 }

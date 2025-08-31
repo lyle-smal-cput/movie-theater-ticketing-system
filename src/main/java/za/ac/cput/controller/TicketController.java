@@ -28,7 +28,7 @@ public class TicketController {
     }
 
     @GetMapping("/read/{ticketId}")
-    public Ticket read(@PathVariable String ticketId) {
+    public Ticket read(@PathVariable Long ticketId) {
         return service.read(ticketId);
     }
 
@@ -38,7 +38,7 @@ public class TicketController {
     }
 
     @DeleteMapping("/delete/{ticketId}")
-    public boolean delete(@PathVariable String ticketId) {
+    public boolean delete(@PathVariable Long ticketId) {
         return service.delete(ticketId);
     }
 
