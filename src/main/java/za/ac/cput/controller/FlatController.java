@@ -24,7 +24,7 @@ public class FlatController {
     }
 
     @GetMapping("/read/{addressId}")
-    public Flat read(@PathVariable String addressId) {
+    public Flat read(@PathVariable Long addressId) {
         return service.read(addressId);
     }
 
@@ -34,7 +34,7 @@ public class FlatController {
     }
 
     @DeleteMapping("/delete/{addressId}")
-    public boolean delete(@PathVariable String addressId) {
+    public boolean delete(@PathVariable Long addressId) {
         return service.delete(addressId);
     }
 

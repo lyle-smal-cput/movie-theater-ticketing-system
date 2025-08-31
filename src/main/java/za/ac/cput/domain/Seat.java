@@ -9,7 +9,8 @@ import jakarta.persistence.*;
 @Entity
 public class Seat {
     @Id
-    private String seatId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long seatId;
     private int seatNumber;
     private boolean isAvailable;
 
@@ -22,13 +23,13 @@ public class Seat {
     }
 
     private Seat(Builder builder) {
-        this.seatId = builder.seatId;
+        this.seatId = Long.valueOf(builder.seatId);
         this.seatNumber = builder.seatNumber;
         this.isAvailable = builder.isAvailable;
         this.theaterRoom = builder.theaterRoom;
     }
 
-    public String getSeatId() {
+    public Long getSeatId() {
         return seatId;
     }
 
@@ -81,7 +82,7 @@ public class Seat {
         }
 
         public Builder copy(Seat seat) {
-            this.seatId = seat.seatId;
+            this.seatId = String.valueOf(seat.seatId);
             this.seatNumber = seat.seatNumber;
             this.isAvailable = seat.isAvailable;
             this.theaterRoom = seat.theaterRoom;

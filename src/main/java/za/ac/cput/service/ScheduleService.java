@@ -24,7 +24,7 @@ public class ScheduleService implements IScheduleService {
     }
 
     @Override
-    public Schedule read (String id){
+    public Schedule read (Long id){
         return this.repository.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class ScheduleService implements IScheduleService {
     }
 
     @Override
-    public boolean delete(String id){
+    public boolean delete(Long id){
         this.repository.deleteById(id);
         return true;
     }

@@ -23,8 +23,8 @@ class CardControllerTest {
     @Autowired
     TestRestTemplate restTemplate;
 
-    LocalDate expiryDate = LocalDate.of(2025, 12, 31);
-    private Card card = new CardFactory().createCard("7456 6235 6984 5336", "856", "Ruth Ifeoma", expiryDate);
+    static LocalDate expiryDate = LocalDate.of(2025, 12, 31);
+    private static Card card = new CardFactory().createCard("7456 6235 6984 5336", "856", "Ruth Ifeoma", expiryDate);
 
     private static final String BASE_URL = "http://localhost:8080/movie-theater-ticketing-system/card";
 

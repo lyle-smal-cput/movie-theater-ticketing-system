@@ -7,6 +7,6 @@ import za.ac.cput.domain.Schedule;
 
 import java.util.List;
 
-public interface IScheduleService extends IService<Schedule, String>{
+public interface IScheduleService extends IService<Schedule, Long>{
     List<Schedule> getAll();
 }

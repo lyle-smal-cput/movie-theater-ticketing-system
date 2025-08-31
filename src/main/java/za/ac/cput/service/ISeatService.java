@@ -8,7 +8,7 @@ import za.ac.cput.domain.Seat;
 
 import java.util.List;
 
-public interface ISeatService extends IService<Seat, String> {
+public interface ISeatService extends IService<Seat, Long> {
     List<Seat> getAll();
 
 }

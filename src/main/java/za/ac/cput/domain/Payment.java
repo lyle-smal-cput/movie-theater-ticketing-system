@@ -8,18 +8,19 @@ import jakarta.persistence.*;
 @Entity
 public class Payment {
     @Id
-    private String paymentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long paymentId;
     private int amount;
 
     protected Payment() {
     }
 
     private Payment(Builder builder) {
-        this.paymentId = builder.paymentId;
+        this.paymentId = Long.valueOf(builder.paymentId);
         this.amount = builder.amount;
     }
 
-    public String getPaymentId() {
+    public Long getPaymentId() {
         return paymentId;
     }
 
@@ -50,7 +51,7 @@ public class Payment {
         }
 
         public Builder copy(Payment payment) {
-            this.paymentId = payment.paymentId;
+            this.paymentId = String.valueOf(payment.paymentId);
             this.amount = payment.amount;
             return this;
         }

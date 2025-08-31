@@ -17,7 +17,7 @@ class CardFactoryTest {
     @Test
     void createCard() {
         LocalDate expiryDate = LocalDate.of(2025, 12, 31);
-        Card card = new CardFactory().createCard("5236953214563214", "966", "Minghao Xu", expiryDate);
+        Card card = CardFactory.createCard("5236953214563214", "966", "Minghao Xu", expiryDate);
         assertNotNull(card);
         System.out.println(card);
     }

@@ -10,8 +10,8 @@ import za.ac.cput.domain.Flat;
 import java.util.List;
 
 @Repository
-public interface FlatRepository extends JpaRepository<Flat, String> {
-    Flat findByAddressId(String AddressId);
+public interface FlatRepository extends JpaRepository<Flat, Long> {
+    Flat findByAddressId(Long AddressId);
     List<Flat> findByStreetName(String streetName);
     List<Flat> findByStreetNumber(String streetNumber);
     List<Flat> findBySuburb(String suburb);

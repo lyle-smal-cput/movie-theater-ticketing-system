@@ -8,6 +8,6 @@ import za.ac.cput.domain.Ticket;
 
 import java.util.List;
 
-public interface ITicketService extends IService<Ticket, String> {
+public interface ITicketService extends IService<Ticket, Long> {
     List<Ticket> getAll();
 }

@@ -15,14 +15,14 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface AdminRepository extends JpaRepository<Admin, String> {
+public interface AdminRepository extends JpaRepository<Admin, Long> {
 
-    Admin findByUserId(String userId);
+    Admin findByUserId(Long userId);
     List<Admin> findByUsername(String username);
     List<Admin> findByFirstName(String firstName);
     List<Admin> findByLastName(String lastName);
     List<Admin> findByEmail(String email);
-    List<Admin> findByAddressAddressId(String addressId);
+    List<Admin> findByAddressAddressId(Long addressId);
     List<Admin> findAdminByCellphoneNumber(String cellphoneNumber);
     List<Admin> findByGender(String gender);
     List<Admin> findByDateOfBirth(LocalDate dateOfBirth);

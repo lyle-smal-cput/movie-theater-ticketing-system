@@ -24,7 +24,7 @@ public class FlatService implements IFlatService{
     }
 
     @Override
-    public Flat read(String addressId) {
+    public Flat read(Long addressId) {
         return this.repository.findById(addressId).orElse(null);
     }
 
@@ -36,7 +36,7 @@ public class FlatService implements IFlatService{
     }
 
     @Override
-    public boolean delete(String addressId) {
+    public boolean delete(Long addressId) {
         if (this.repository.existsById(addressId)) {
             this.repository.deleteById(addressId);
             return true;

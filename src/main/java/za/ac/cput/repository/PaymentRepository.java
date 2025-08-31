@@ -10,7 +10,7 @@ import za.ac.cput.domain.Payment;
 import java.util.List;
 
 @Repository
-public interface PaymentRepository extends JpaRepository<Payment, String> {
-    List<Payment> findByPaymentId(String paymentId);
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
+    List<Payment> findByPaymentId(Long paymentId);
     List<Payment> findByAmount(int amount);
 }

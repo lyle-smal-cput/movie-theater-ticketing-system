@@ -7,6 +7,6 @@ import za.ac.cput.domain.Flat;
 
 import java.util.List;
 
-public interface IFlatService extends IService<Flat, String> {
+public interface IFlatService extends IService<Flat, Long> {
     List<Flat> getAll();
 }

@@ -20,8 +20,6 @@ public class Card {
     private String cardHolderName;
     private LocalDate expiryDate;
 
-    //TODO: Add expiryDate;
-
     @ManyToOne
     @JoinColumn(name = "customer_id")  // foreign key column
     private Customer customer;

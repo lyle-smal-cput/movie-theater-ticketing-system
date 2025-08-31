@@ -28,7 +28,7 @@ public class TheaterRoomController {
     }
 
     @GetMapping("/read/{theaterRoomId}")
-    public TheaterRoom read(@PathVariable String theaterRoomId) {
+    public TheaterRoom read(@PathVariable Long theaterRoomId) {
         return service.read(theaterRoomId);
     }
 
@@ -38,7 +38,7 @@ public class TheaterRoomController {
     }
 
     @DeleteMapping("/delete/{theaterRoomId}")
-    public boolean delete(@PathVariable String theaterRoomId) {
+    public boolean delete(@PathVariable Long theaterRoomId) {
         return service.delete(theaterRoomId);
     }
 
@@ -48,7 +48,7 @@ public class TheaterRoomController {
     }
 
     @GetMapping("/getAll/{branchId}")
-    public List<TheaterRoom> getAll(@PathVariable String branchId) {
+    public List<TheaterRoom> getAll(@PathVariable Long branchId) {
         return service.findByBranchId(branchId);
     }
 }

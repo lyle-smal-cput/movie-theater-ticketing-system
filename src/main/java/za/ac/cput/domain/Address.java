@@ -6,10 +6,11 @@ package za.ac.cput.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Address {
     @Id
-    protected String addressId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long addressId;
     protected String streetName;
     protected String streetNumber;
     protected String suburb;
@@ -20,7 +21,7 @@ public class Address {
 
     public Address(String addressId, String streetName, String streetNumber,
                    String suburb, String city, String country, short postalCode) {
-        this.addressId = addressId;
+        this.addressId = Long.valueOf(addressId);
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.suburb = suburb;
@@ -30,12 +31,12 @@ public class Address {
     }
 
 
-    public String getAddressId() {
+    public Long getAddressId() {
         return addressId;
     }
 
     public void setAddressId(String addressId) {
-        this.addressId = addressId;
+        this.addressId = Long.valueOf(addressId);
     }
 
     public String getStreetName() {

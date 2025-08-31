@@ -5,11 +5,12 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.*;
-import org.springframework.scheduling.annotation.Scheduled;
+
 @Entity
 public class Ticket {
     @Id
-    private String ticketId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long ticketId;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
@@ -31,14 +32,14 @@ public class Ticket {
     }
 
     private Ticket(Builder builder) {
-        this.ticketId = builder.ticketId;
+        this.ticketId = Long.valueOf(builder.ticketId);
         this.user = builder.user;
         this.payment = builder.payment;
         this.schedule = builder.schedule;
         this.seat = builder.seat;
     }
 
-    public String getTicketId() {
+    public Long getTicketId() {
         return ticketId;
     }
 
@@ -102,7 +103,7 @@ public class Ticket {
         }
 
         public Builder copy(Ticket ticket) {
-            this.ticketId = ticket.ticketId;
+            this.ticketId = String.valueOf(ticket.ticketId);
             this.user = ticket.user;
             this.payment = ticket.payment;
             this.schedule = ticket.schedule;

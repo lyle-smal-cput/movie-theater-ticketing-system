@@ -8,6 +8,6 @@ import za.ac.cput.domain.TheaterRoom;
 
 import java.util.List;
 
-public interface ITheaterRoomService extends IService<TheaterRoom, String> {
+public interface ITheaterRoomService extends IService<TheaterRoom, Long> {
     List<TheaterRoom> getAll();
 }

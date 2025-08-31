@@ -12,10 +12,7 @@ public class BranchFactory {
             return null;
         }
 
-        String branchId = Helper.generateId();
-
         return new Branch.Builder()
-                .setBranchId(branchId)
                 .setLocation(location)
                 .setNumberOfTheaterRooms(numberOfTheaterRooms)
                 .build();

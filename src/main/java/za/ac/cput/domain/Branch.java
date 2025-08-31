@@ -1,6 +1,8 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 /* Branch.java
@@ -10,7 +12,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Branch {
     @Id
-    private String branchId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long branchId;
     private String location;
     private int numberOfTheaterRooms;
 
@@ -18,7 +21,7 @@ public class Branch {
     }
 
     public Branch(String branchId, int numberOfTheaterRooms) {
-        this.branchId = branchId;
+        this.branchId = Long.valueOf(branchId);
         this.numberOfTheaterRooms = numberOfTheaterRooms;
     }
 
@@ -28,7 +31,7 @@ public class Branch {
         this.numberOfTheaterRooms = builder.numberOfTheaterRooms;
     }
 
-    public String getBranchId() {
+    public Long getBranchId() {
         return branchId;
     }
 
@@ -50,11 +53,11 @@ public class Branch {
     }
 
     public static class Builder {
-        private String branchId;
+        private Long branchId;
         private String location;
         private int numberOfTheaterRooms;
 
-        public Builder setBranchId(String branchId) {
+        public Builder setBranchId(Long branchId) {
             this.branchId = branchId;
             return this;
         }

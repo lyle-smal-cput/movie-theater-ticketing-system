@@ -18,13 +18,13 @@ public class CartItemService implements ICartItemService {
     public CartItem create(CartItem cartItem) {return this.repository.save(cartItem);}
 
     @Override
-    public CartItem read(String id) {return this.repository.findById(id).orElse(null);}
+    public CartItem read(Long id) {return this.repository.findById(id).orElse(null);}
 
     @Override
     public CartItem update(CartItem cartItem) {return this.repository.save(cartItem);}
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
       this.repository.deleteById(id);
       return true;
     }

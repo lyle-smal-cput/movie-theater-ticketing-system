@@ -30,7 +30,7 @@ public class AdminService implements IAdminService {
     }
 
     @Override
-    public Admin read(String string) {
+    public Admin read(Long string) {
         return adminRepository.findById(string)
                 .orElseThrow(() -> new IllegalArgumentException("Admin not found with id: " + string));
     }
@@ -45,7 +45,7 @@ public class AdminService implements IAdminService {
     }
 
     @Override
-    public boolean delete(String string) {
+    public boolean delete(Long string) {
         adminRepository.deleteById(string);
         return true;
     }

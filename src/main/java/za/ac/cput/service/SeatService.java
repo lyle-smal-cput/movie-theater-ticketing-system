@@ -24,7 +24,7 @@ public class SeatService implements ISeatService {
     }
 
     @Override
-    public Seat read(String id) {
+    public Seat read(Long id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class SeatService implements ISeatService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.repository.deleteById(id);
         return true;
     }
@@ -44,7 +44,7 @@ public class SeatService implements ISeatService {
         return this.repository.findAll();
     }
 
-    public List<Seat> getAllByTheaterRoomId(String id) {
+    public List<Seat> getAllByTheaterRoomId(Long id) {
         return this.repository.findByTheaterRoomTheaterRoomId(id);
     }
 }

@@ -28,7 +28,7 @@ public class SeatController {
     }
 
     @GetMapping("/read/{seatId}")
-    public Seat read(@PathVariable String seatId) {
+    public Seat read(@PathVariable Long seatId) {
         return service.read(seatId);
     }
 
@@ -38,7 +38,7 @@ public class SeatController {
     }
 
     @DeleteMapping("/delete/{seatId}")
-    public boolean delete(@PathVariable String seatId) {
+    public boolean delete(@PathVariable Long seatId) {
         return service.delete(seatId);
     }
 
@@ -48,7 +48,7 @@ public class SeatController {
     }
 
     @GetMapping("/getAll/{theaterRoomId}")
-    public List<Seat> getAll(@PathVariable String theaterRoomId) {
+    public List<Seat> getAll(@PathVariable Long theaterRoomId) {
         return service.getAllByTheaterRoomId(theaterRoomId);
     }
 }

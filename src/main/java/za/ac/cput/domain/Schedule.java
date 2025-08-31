@@ -11,8 +11,8 @@ import java.time.LocalTime;
 @Entity
 public class Schedule {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String scheduleId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long scheduleId;
     private LocalTime startTime;
     private LocalTime endTime;
     private LocalDate date;
@@ -31,7 +31,7 @@ public class Schedule {
     }//end of Schedule()
 
     public Schedule(ScheduleBuilder builder){
-        this.scheduleId = builder.scheduleId;
+        this.scheduleId = Long.valueOf(builder.scheduleId);
         this.startTime = builder.startTime;
         this.endTime = builder.endTime;
         this.date = builder.date;
@@ -40,7 +40,7 @@ public class Schedule {
         this.theaterRoom = builder.theaterRoom;
     }//end of Schedule(ScheduleBuilder)
 
-    public String getScheduleId() {
+    public Long getScheduleId() {
         return scheduleId;
     }
     public String getStartTime() {
@@ -125,7 +125,7 @@ public class Schedule {
             return this;
         }
         public ScheduleBuilder copy(Schedule schedule) {
-            this.scheduleId = schedule.scheduleId;
+            this.scheduleId = String.valueOf(schedule.scheduleId);
             this.startTime = schedule.startTime;
             this.endTime = schedule.endTime;
             this.date = schedule.date;

@@ -12,14 +12,14 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Repository
-public interface ScheduleRepository extends JpaRepository<Schedule, String> {
-    List<Schedule> findByScheduleId(String scheduleId);
+public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
+    List<Schedule> findByScheduleId(Long scheduleId);
     List<Schedule> findByDate(LocalDate date);
     List <Schedule> findByStartTime(LocalTime startTime);
     List<Schedule> findByEndTime(LocalTime endTime);
     List<Schedule> findByStartTimeAndEndTime(LocalTime startTime, LocalTime endTime);
     List<Schedule> findByIsFinishedAiring(boolean isFinishedAiring);
-    List<Schedule> findByTheaterRoomTheaterRoomId(String theaterRoomId);
+    List<Schedule> findByTheaterRoomTheaterRoomId(Long theaterRoomId);
     List<Schedule> findByMovie(Movie movie);
 
 

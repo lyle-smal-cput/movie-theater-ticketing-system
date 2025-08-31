@@ -14,7 +14,7 @@ public class Flat extends Address {
     }
 
     private Flat(Builder builder) {
-        this.addressId = builder.addressId;
+        this.addressId = Long.valueOf(builder.addressId);
         this.streetName = builder.streetName;
         this.unitNumber = builder.unitNumber;
         this.suburb = builder.suburb;
@@ -103,7 +103,7 @@ public class Flat extends Address {
         }
 
         public Builder copy(Flat flat) {
-            this.addressId = flat.addressId;
+            this.addressId = String.valueOf(flat.addressId);
             this.streetNumber = flat.streetNumber;
             this.streetName = flat.streetName;
             this.suburb = flat.suburb;

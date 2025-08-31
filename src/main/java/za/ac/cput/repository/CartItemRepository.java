@@ -10,9 +10,9 @@ import za.ac.cput.domain.CartItem;
 import java.util.List;
 
 @Repository
-public interface CartItemRepository extends JpaRepository<CartItem, String> {
-    List<CartItem> findByCartItemId(String cartItemId);
-    List<CartItem> findByCartCartId(String cartId);
-    List<CartItem> findByScheduleScheduleId(String scheduleId);
+public interface CartItemRepository extends JpaRepository<CartItem, Long> {
+    List<CartItem> findByCartItemId(Long cartItemId);
+    List<CartItem> findByCartCartId(Long cartId);
+    List<CartItem> findByScheduleScheduleId(Long scheduleId);
     List<CartItem> findByQuantity(int quantity);
 }

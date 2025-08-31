@@ -29,7 +29,7 @@ public class CustomerService implements ICustomerService{
     }
 
     @Override
-    public Customer read(String string) {
+    public Customer read(Long string) {
         return customerRepository.findById(string)
                 .orElseThrow(() -> new IllegalArgumentException("Customer not found with id: " + string));
     }
@@ -40,7 +40,7 @@ public class CustomerService implements ICustomerService{
     }
 
     @Override
-    public boolean delete(String string) {
+    public boolean delete(Long string) {
         customerRepository.deleteById(string);
         return true;
     }

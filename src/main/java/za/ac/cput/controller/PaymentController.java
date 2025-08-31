@@ -25,7 +25,7 @@ public class PaymentController {
     }
 
     @GetMapping("/read/{id}")
-    public Payment read(@PathVariable String id) {
+    public Payment read(@PathVariable Long id) {
         return service.read(id);
     }
 
@@ -35,7 +35,7 @@ public class PaymentController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id) {
+    public boolean delete(@PathVariable Long id) {
         return service.delete(id);
     }
 

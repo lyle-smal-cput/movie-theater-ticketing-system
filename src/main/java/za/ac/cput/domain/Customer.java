@@ -23,7 +23,7 @@ public class Customer extends User {
     private List<Card> cards;
 
     private Customer(Builder builder) {
-        this.userId = builder.userId;
+        this.userId = Long.valueOf(builder.userId);
         this.username = builder.username;
         this.password = builder.password;
         this.firstName = builder.firstName;
@@ -129,7 +129,7 @@ public class Customer extends User {
         }
 
         public Builder copy(Customer customer) {
-            this.userId = customer.userId;
+            this.userId = String.valueOf(customer.userId);
             this.username = customer.username;
             this.password = customer.password;
             this.firstName = customer.firstName;
