@@ -31,7 +31,7 @@ public class Schedule {
     }//end of Schedule()
 
     public Schedule(ScheduleBuilder builder){
-        this.scheduleId = Long.valueOf(builder.scheduleId);
+        this.scheduleId = builder.scheduleId;
         this.startTime = builder.startTime;
         this.endTime = builder.endTime;
         this.date = builder.date;
@@ -77,7 +77,7 @@ public class Schedule {
     }//end of toString()
 
     public static class ScheduleBuilder {
-        private String scheduleId;
+        private Long scheduleId;
         private LocalTime startTime;
         private LocalTime endTime;
         private LocalDate date;
@@ -87,17 +87,6 @@ public class Schedule {
 
         public ScheduleBuilder(){
 
-        }
-
-        public ScheduleBuilder(String scheduleId, LocalTime startTime, LocalTime endTime,
-                               LocalDate date, boolean isFinishedAiring, Movie movie, TheaterRoom theaterRoom) {
-            this.scheduleId = scheduleId;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.date = date;
-            this.isFinishedAiring = isFinishedAiring;
-            this.movie = movie;
-            this.theaterRoom = theaterRoom;
         }
 
         public ScheduleBuilder setStartTime(LocalTime startTime) {
@@ -125,7 +114,7 @@ public class Schedule {
             return this;
         }
         public ScheduleBuilder copy(Schedule schedule) {
-            this.scheduleId = String.valueOf(schedule.scheduleId);
+            this.scheduleId = schedule.scheduleId;
             this.startTime = schedule.startTime;
             this.endTime = schedule.endTime;
             this.date = schedule.date;
@@ -137,7 +126,6 @@ public class Schedule {
 
         public Schedule build() {
             return new Schedule(this);
-
         }
     }//end of static class
 }// end of class
