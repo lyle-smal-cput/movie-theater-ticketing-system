@@ -28,6 +28,7 @@ public class Admin extends User {
         this.cellphoneNumber = builder.cellphoneNumber;
         this.gender = builder.gender;
         this.dateOfBirth = builder.dateOfBirth;
+        this.isAdmin = builder.isAdmin;
     }
 
     protected Admin() {
@@ -65,6 +66,7 @@ public class Admin extends User {
         private String cellphoneNumber;
         private String gender;
         private LocalDate dateOfBirth;
+        private boolean isAdmin;
 
         public Builder setUserId(Long userId) {
             this.userId = userId;
@@ -116,6 +118,11 @@ public class Admin extends User {
             return this;
         }
 
+        public Builder setIsAdmin() {
+            this.isAdmin = true;
+            return this;
+        }
+
         public Builder copy(Admin admin) {
             this.userId = admin.userId;
             this.username = admin.username;
@@ -127,6 +134,7 @@ public class Admin extends User {
             this.cellphoneNumber = admin.cellphoneNumber;
             this.gender = admin.gender;
             this.dateOfBirth = admin.dateOfBirth;
+            this.isAdmin = true;
             return this;
         }
 

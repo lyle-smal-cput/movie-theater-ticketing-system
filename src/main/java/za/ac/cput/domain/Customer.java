@@ -35,6 +35,7 @@ public class Customer extends User {
         this.gender = builder.gender;
         this.dateOfBirth = builder.dateOfBirth;
         this.cards = builder.cards;
+        this.isAdmin = builder.isAdmin;
     }
 
     protected Customer() {
@@ -73,6 +74,7 @@ public class Customer extends User {
         private String gender;
         private LocalDate dateOfBirth;
         private List<Card> cards = new ArrayList<>();
+        private boolean isAdmin;
 
         public Builder setUserId(Long userId) {
             this.userId = userId;
@@ -129,6 +131,11 @@ public class Customer extends User {
             return this;
         }
 
+        public Builder setIsAdmin() {
+            this.isAdmin = false;
+            return this;
+        }
+
         public Customer build() {
             return new Customer(this);
         }
@@ -145,6 +152,7 @@ public class Customer extends User {
             this.gender = customer.gender;
             this.dateOfBirth = customer.dateOfBirth;
             this.cards = customer.cards;
+            this.isAdmin = false;
             return this;
         }
     }

@@ -24,6 +24,8 @@ public abstract class User {
     protected String gender;
     protected LocalDate dateOfBirth;
 
+    protected boolean isAdmin;
+
     public String getUsername() {
         return username;
     }
@@ -58,5 +60,9 @@ public abstract class User {
 
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 }

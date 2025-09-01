@@ -39,6 +39,7 @@ public class CustomerFactory {
                 .setGender(gender)
                 .setDateOfBirth(dateOfBirth)
                 .addCard(card)
+                .setIsAdmin()
                 .build();
     }
 }

@@ -35,6 +35,7 @@ public class AdminFactory {
                 .setCellphoneNumber(cellphoneNumber)
                 .setGender(gender)
                 .setDateOfBirth(dateOfBirth)
+                .setIsAdmin()
                 .build();
     }
 }
