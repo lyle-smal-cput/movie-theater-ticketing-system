@@ -44,4 +44,7 @@ public class CustomerService implements ICustomerService{
         customerRepository.deleteById(string);
         return true;
     }
+    public Customer getCustomerByEmailAndPassword(String email, String password) {
+        return customerRepository.findByEmailAndPassword(email, password);//Siya
+    }
 }

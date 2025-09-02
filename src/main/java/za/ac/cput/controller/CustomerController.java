@@ -17,10 +17,12 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
     private CustomerService service;
+    private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerService service) {
+    public CustomerController(CustomerService service, CustomerService customerService) {
         this.service = service;
+        this.customerService = customerService;
     }
 
     @PostMapping("/create")
@@ -46,5 +48,10 @@ public class CustomerController {
     @GetMapping("/getAll")
     public List<Customer> getAll() {
         return service.getAll();
+    }
+
+    @GetMapping("/getByEmailAndPassword/{email}/{password}")
+    public Customer getCustomerByEmailAndPassword(@PathVariable String email, @PathVariable String password) {
+        return service.getCustomerByEmailAndPassword(email, password);//Siya
     }
 }

@@ -21,6 +21,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findByFirstName(String firstName);
     List<Customer> findByLastName(String lastName);
     List<Customer> findByEmail(String email);
+    Customer findByEmailAndPassword(String email, String password);//Siya
     List<Admin> findByAddressAddressId(Long addressId);
     List<Customer> findAdminByCellphoneNumber(String cellphoneNumber);
     List<Customer> findByGender(String gender);
