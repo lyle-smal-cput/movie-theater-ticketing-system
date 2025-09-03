@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class AdminServiceTest {
-    Admin admin = AdminFactory.createAdmin("admin123", "password", "Admin", "User", "LastName", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1));
+    Admin admin = AdminFactory.createAdmin("admin123", "password", "Admin", "User", "lylesmal@gmail.com", HouseFactory.createHouse("1234", "123 Main St", "Southfield", "Cape Town", "South Africa", (short) 7880), "+27678074872", "male", LocalDate.of(1990, 1, 1), true);
 @Autowired
     private AdminService adminService;
 

@@ -29,6 +29,7 @@ public class Admin extends User {
         this.gender = builder.gender;
         this.dateOfBirth = builder.dateOfBirth;
         this.isAdmin = builder.isAdmin;
+        this.image = builder.image;
     }
 
     protected Admin() {
@@ -67,6 +68,7 @@ public class Admin extends User {
         private String gender;
         private LocalDate dateOfBirth;
         private boolean isAdmin;
+        private byte[] image;
 
         public Builder setUserId(Long userId) {
             this.userId = userId;
@@ -118,8 +120,13 @@ public class Admin extends User {
             return this;
         }
 
-        public Builder setIsAdmin() {
-            this.isAdmin = true;
+        public Builder setIsAdmin(boolean isAdmin) {
+            this.isAdmin = isAdmin;
+            return this;
+        }
+
+        public Builder setImage(byte[] image) {
+            this.image = image;
             return this;
         }
 
@@ -134,7 +141,8 @@ public class Admin extends User {
             this.cellphoneNumber = admin.cellphoneNumber;
             this.gender = admin.gender;
             this.dateOfBirth = admin.dateOfBirth;
-            this.isAdmin = true;
+            this.isAdmin = admin.isAdmin;
+            this.image = admin.image;
             return this;
         }
 

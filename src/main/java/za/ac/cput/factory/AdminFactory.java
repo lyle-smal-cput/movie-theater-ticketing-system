@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class AdminFactory {
 
     public static Admin createAdmin(String username, String password, String firstName,
-                                    String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth) {
+                                    String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth, boolean isAdmin, byte[] image) {
         //Validates if userId, username, password, firstName, lastName, email, address, cellphone, gender, dateOfBirth is null or empty
         if (Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password) ||
                 Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) ||
@@ -35,7 +35,8 @@ public class AdminFactory {
                 .setCellphoneNumber(cellphoneNumber)
                 .setGender(gender)
                 .setDateOfBirth(dateOfBirth)
-                .setIsAdmin()
+                .setIsAdmin(isAdmin)
+                .setImage(image)
                 .build();
     }
 }
