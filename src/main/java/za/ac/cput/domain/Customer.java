@@ -36,6 +36,7 @@ public class Customer extends User {
         this.dateOfBirth = builder.dateOfBirth;
         this.cards = builder.cards;
         this.isAdmin = builder.isAdmin;
+        this.image = builder.image;
     }
 
     protected Customer() {
@@ -75,6 +76,7 @@ public class Customer extends User {
         private LocalDate dateOfBirth;
         private List<Card> cards = new ArrayList<>();
         private boolean isAdmin;
+        private byte[] image;
 
         public Builder setUserId(Long userId) {
             this.userId = userId;
@@ -136,6 +138,11 @@ public class Customer extends User {
             return this;
         }
 
+        public Builder setImage(byte[] image) {
+            this.image = image;
+            return this;
+        }
+
         public Customer build() {
             return new Customer(this);
         }
@@ -153,6 +160,7 @@ public class Customer extends User {
             this.dateOfBirth = customer.dateOfBirth;
             this.cards = customer.cards;
             this.isAdmin = false;
+            this.image = customer.image;
             return this;
         }
     }

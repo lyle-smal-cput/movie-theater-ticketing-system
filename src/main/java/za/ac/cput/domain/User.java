@@ -26,6 +26,9 @@ public abstract class User {
 
     protected boolean isAdmin;
 
+    @Lob
+    protected byte[] image;
+
     public String getUsername() {
         return username;
     }
@@ -65,4 +68,6 @@ public abstract class User {
     public boolean isAdmin() {
         return isAdmin;
     }
+
+    public byte[] getImage() {return image;}
 }

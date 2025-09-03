@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class CustomerFactory {
 
     public static Customer createCustomer( String username, String password, String firstName,
-                                          String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth, Card card) {
+                                          String lastName, String email, Address address, String cellphoneNumber, String gender, LocalDate dateOfBirth, Card card, byte[] image) {
         //Validates if userId, username, password, firstName, lastName, email, address, cellphone, gender, dateOfBirth and card is null or empty
         if (Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password) ||
                 Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) ||
@@ -40,6 +40,7 @@ public class CustomerFactory {
                 .setDateOfBirth(dateOfBirth)
                 .addCard(card)
                 .setIsAdmin()
+                .setImage(image)
                 .build();
     }
 }
