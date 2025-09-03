@@ -118,8 +118,8 @@ public class Admin extends User {
             return this;
         }
 
-        public Builder setIsAdmin() {
-            this.isAdmin = true;
+        public Builder setIsAdmin(boolean isAdmin) {
+            this.isAdmin = isAdmin;
             return this;
         }
 
@@ -134,7 +134,7 @@ public class Admin extends User {
             this.cellphoneNumber = admin.cellphoneNumber;
             this.gender = admin.gender;
             this.dateOfBirth = admin.dateOfBirth;
-            this.isAdmin = true;
+            this.isAdmin = admin.isAdmin;
             return this;
         }
 
