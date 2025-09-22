@@ -38,4 +38,9 @@ public class CartService implements ICartService {
     public List<Cart> getAll() {
         return this.repository.findAll();
     }
+
+
+    public Cart readByUserId(Long userId) {
+        return this.repository.findByCustomerUserId(userId);
+    }
 }

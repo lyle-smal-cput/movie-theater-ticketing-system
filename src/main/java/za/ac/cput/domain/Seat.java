@@ -14,7 +14,7 @@ public class Seat {
     private int seatNumber;
     private boolean isAvailable;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "theater_room_id")
     private TheaterRoom theaterRoom;
 
