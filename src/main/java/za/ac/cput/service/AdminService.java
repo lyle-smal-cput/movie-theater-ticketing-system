@@ -39,6 +39,10 @@ public class AdminService implements IAdminService {
         return adminRepository.findByEmail(string);
     }
 
+    public Admin readByUsername(String string) {
+        return adminRepository.findByUsername(string);
+    }
+
     @Override
     public Admin update(Admin admin) {
         return adminRepository.save(admin);

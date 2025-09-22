@@ -11,7 +11,9 @@ import java.time.LocalDate;
 
 @MappedSuperclass
 public abstract class User {
+    @Column(unique = true, nullable = false)
     protected String username;
+
     protected String password;
     protected String firstName;
     protected String lastName;

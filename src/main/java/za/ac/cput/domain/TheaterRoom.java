@@ -15,7 +15,7 @@ public class TheaterRoom {
     private int capacity;
     private int seatsAvailable;
     private boolean is3DSupported;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "branch_id")
     private Branch branch;
 

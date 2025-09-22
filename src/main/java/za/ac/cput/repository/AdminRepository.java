@@ -18,7 +18,7 @@ import java.util.List;
 public interface AdminRepository extends JpaRepository<Admin, Long> {
 
     Admin findByUserId(Long userId);
-    List<Admin> findByUsername(String username);
+    Admin findByUsername(String username);
     List<Admin> findByFirstName(String firstName);
     List<Admin> findByLastName(String lastName);
     List<Admin> findByEmail(String email);

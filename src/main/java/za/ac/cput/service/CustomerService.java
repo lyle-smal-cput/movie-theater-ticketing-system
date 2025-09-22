@@ -8,6 +8,7 @@ package za.ac.cput.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.Customer;
 import za.ac.cput.repository.CustomerRepository;
 
@@ -33,6 +34,11 @@ public class CustomerService implements ICustomerService{
         return customerRepository.findById(string)
                 .orElseThrow(() -> new IllegalArgumentException("Customer not found with id: " + string));
     }
+
+    public Customer readByUsername(String string) {
+        return customerRepository.findByUsername(string);
+    }
+
 
     @Override
     public Customer update(Customer customer) {
