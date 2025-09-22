@@ -38,4 +38,10 @@ public class CartService implements ICartService {
     public List<Cart> getAll() {
         return this.repository.findAll();
     }
+
+    @Override
+    public Cart readByUserId(Long userId) {
+        List<Cart> carts = this.repository.findByCustomerUserId(userId);
+        return carts.isEmpty() ? null : carts.get(0);
+    }
 }
