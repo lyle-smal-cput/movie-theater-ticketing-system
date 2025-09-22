@@ -41,7 +41,6 @@ public class CartService implements ICartService {
 
     @Override
     public Cart readByUserId(Long userId) {
-        List<Cart> carts = this.repository.findByCustomerUserId(userId);
-        return carts.isEmpty() ? null : carts.get(0);
+        return this.repository.findByCustomerUserId(userId);
     }
 }
