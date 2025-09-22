@@ -7,6 +7,7 @@ CustomerController.java
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.Customer;
 import za.ac.cput.service.CustomerService;
 
@@ -31,6 +32,11 @@ public class CustomerController {
     @GetMapping("/read/{customerId}")
     public Customer read(@PathVariable Long customerId) {
         return service.read(customerId);
+    }
+
+    @GetMapping("/readByUsername/{username}")
+    public Customer readByUsername(@PathVariable String username) {
+        return service.readByUsername(username);
     }
 
     @PutMapping("/update")
