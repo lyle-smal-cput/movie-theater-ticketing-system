@@ -5,6 +5,4 @@ import java.util.List;
 
 public interface ICartService extends IService<Cart, Long> {
     List<Cart> getAll();
-
-    Cart readByUserId(Long userId);
 }

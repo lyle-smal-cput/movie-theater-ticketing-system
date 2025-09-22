@@ -31,7 +31,7 @@ public class CartController {
 
     @GetMapping("/readByUserId/{id}")
     public Cart readByUserId(@PathVariable Long id) {
-        return service.read(id);
+        return service.readByUserId(id);
     }
 
     @PutMapping("/update")
