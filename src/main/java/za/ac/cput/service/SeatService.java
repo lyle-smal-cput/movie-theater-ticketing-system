@@ -44,7 +44,12 @@ public class SeatService implements ISeatService {
         return this.repository.findAll();
     }
 
-    public List<Seat> getAllByTheaterRoomId(Long id) {
-        return this.repository.findByTheaterRoomTheaterRoomId(id);
+    public int updateSeatAvailability(Long id, boolean isAvailable) {
+        return this.repository.updateSeatAvailability(id, isAvailable);
     }
+
+    public List<Seat> findSeatsByTheaterRoom_TheaterRoomIdAndAvailable(Long id, boolean isAvailable){
+        return this.repository.findSeatsByTheaterRoom_TheaterRoomIdAndIsAvailable(id, isAvailable);
+    }
+
 }

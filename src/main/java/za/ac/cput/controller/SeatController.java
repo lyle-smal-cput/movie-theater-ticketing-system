@@ -47,8 +47,13 @@ public class SeatController {
         return service.getAll();
     }
 
-    @GetMapping("/getAll/{theaterRoomId}")
-    public List<Seat> getAll(@PathVariable Long theaterRoomId) {
-        return service.getAllByTheaterRoomId(theaterRoomId);
+    @PutMapping("/updateSeats/{Id}/{isAvailable}")
+    public int updateSeatAvailability(@PathVariable Long Id, @PathVariable boolean isAvailable) {
+        return service.updateSeatAvailability(Id, isAvailable);
+    }
+
+    @GetMapping("/getAllByAvailability/{id}/{isAvailable}")
+    public List<Seat> getAllSeatsByTheaterRoomIdAndAvailability(@PathVariable Long id, @PathVariable boolean isAvailable){
+        return service.findSeatsByTheaterRoom_TheaterRoomIdAndAvailable(id, isAvailable);
     }
 }
