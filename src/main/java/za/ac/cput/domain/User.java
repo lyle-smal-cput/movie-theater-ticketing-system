@@ -51,7 +51,7 @@ public abstract class User {
         return email;
     }
 
-    public Address getAddressId() {
+    public Address getAddress() {
         return address;
     }
 
