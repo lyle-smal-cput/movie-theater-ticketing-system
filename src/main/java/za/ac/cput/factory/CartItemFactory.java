@@ -12,13 +12,14 @@ import za.ac.cput.util.Helper;
 
 public class CartItemFactory {
 
-    public static CartItem createCartItem( int quantity, Cart cart, Schedule schedule, Customer customer, String movieTitle, byte[] image) {
+    public static CartItem createCartItem(String cartItemId, int quantity, Cart cart, Schedule schedule, Customer customer, String movieTitle, byte[] image) {
 
-        if (quantity <= 0 || cart == null || schedule == null || Helper.isNullOrEmpty(movieTitle) || image == null) {
+        if (Helper.isNullOrEmpty(cartItemId) ||quantity <= 0 || cart == null || schedule == null || Helper.isNullOrEmpty(movieTitle) || image == null) {
             return null;
         }
 
         return new CartItem.Builder()
+                .setCartItemId(cartItemId)
                 .setQuantity(quantity)
                 .setCart(cart)
                 .setSchedule(schedule)

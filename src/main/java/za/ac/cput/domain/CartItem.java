@@ -28,17 +28,9 @@ public class CartItem {
     @JoinColumn(name = "customer_id")
     private Customer customer;
     private double price;
-    @ManyToOne
-    @JoinColumn(name = "seat_seat_id")
-    private Seat seat;
 
     @Lob
     private byte[] image;
-
-    public Seat getSeat() {
-        return seat;
-    }
-
 
     protected CartItem() {}
 
@@ -90,6 +82,10 @@ public class CartItem {
                 ", quantity=" + quantity +
                 ", cart=" + cart +
                 ", schedule=" + schedule +
+                ", movieTitle='" + movieTitle + '\'' +
+                ", customer=" + customer +
+                ", price=" + price +
+                ", image=" + image +
                 '}';
     }
 
