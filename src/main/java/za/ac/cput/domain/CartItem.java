@@ -1,6 +1,7 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.*;
+import za.ac.cput.service.SeatService;
 
 /* CartItem.java
      CartItem POJO class
@@ -21,6 +22,24 @@ public class CartItem {
     @JoinColumn(name="schedule_id")
     private Schedule schedule;
 
+    private String movieTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+    private double price;
+    @ManyToOne
+    @JoinColumn(name = "seat_seat_id")
+    private Seat seat;
+
+    @Lob
+    private byte[] image;
+
+    public Seat getSeat() {
+        return seat;
+    }
+
+
     protected CartItem() {}
 
     private CartItem(Builder builder) {
@@ -28,6 +47,10 @@ public class CartItem {
         this.quantity = builder.quantity;
         this.cart = builder.cart;
         this.schedule = builder.schedule;
+        this.movieTitle = builder.movieTitle;
+        this.image = builder.image;
+        this.customer = builder.customer;
+        this.price = builder.price;
     }
 
     public Long getCartItemId() {
@@ -46,6 +69,20 @@ public class CartItem {
         return schedule;
     }
 
+    public String getMovieTitle(){
+        return movieTitle;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
+    public byte[] getImage() {
+        return image;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "CartItem{" +
@@ -61,6 +98,10 @@ public class CartItem {
         private int quantity;
         private Cart cart;
         private Schedule schedule;
+        private String movieTitle;
+        private Customer customer;
+        private byte[] image;
+        private double price;
 
         public Builder setCartItemId(String cartItemId) {
             this.cartItemId = cartItemId;
@@ -81,12 +122,34 @@ public class CartItem {
             this.schedule = schedule;
             return this;
         }
+        public Builder setMovieTitle(String movieTitle) {
+            this.movieTitle = movieTitle;
+            return this;
+        }
+        public Builder setCustomer(Customer customer) {
+            this.customer = customer;
+            return this;
+        }
+        public Builder setImage(byte[] image) {
+            this.image = image;
+            return this;
+        }
+
+        public Builder setPrice(double price) {
+            this.price = price;
+            return this;
+        }
+
 
         public Builder copy(CartItem cartItem) {
             this.cartItemId = String.valueOf(cartItem.cartItemId);
             this.quantity = cartItem.quantity;
             this.cart = cartItem.cart;
             this.schedule = cartItem.schedule;
+            this.movieTitle = cartItem.movieTitle;
+            this.image = cartItem.image;
+            this.customer = cartItem.customer;
+            this.price = cartItem.price;
             return this;
         }
 

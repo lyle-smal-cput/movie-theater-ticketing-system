@@ -44,4 +44,9 @@ public class CartItemController {
     public List<CartItem> getAll() {
         return service.getAll();
     }
+
+    @GetMapping("/getAll/{id}")
+    public List<CartItem> getAllByCartCartId(@PathVariable Long id) {
+        return service.getAllByCartId(id);
+    }
 }
