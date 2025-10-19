@@ -7,6 +7,7 @@ package za.ac.cput.service;
      Date: 25 May 2025 */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.Customer;
@@ -19,6 +20,9 @@ public class CustomerService implements ICustomerService{
     @Autowired
     private CustomerRepository customerRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public List<Customer> getAll() {
         return customerRepository.findAll();
@@ -26,7 +30,20 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public Customer create(Customer customer) {
-        return customerRepository.save(customer);
+        Customer encodedCustomer = new Customer.Builder()
+                .setUserId(customer.getUserId())
+                .setUsername(customer.getUsername())
+                .setPassword(passwordEncoder.encode(customer.getPassword()))
+                .setFirstName(customer.getFirstName())
+                .setLastName(customer.getLastName())
+                .setEmail(customer.getEmail())
+                .setAddress(customer.getAddressId())
+                .setCellphoneNumber(customer.getCellphoneNumber())
+                .setGender(customer.getGender())
+                .setDateOfBirth(customer.getDateOfBirth())
+                .setImage(customer.getImage())
+                .build();
+        return customerRepository.save(encodedCustomer);
     }
 
     @Override
