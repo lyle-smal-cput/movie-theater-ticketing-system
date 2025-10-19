@@ -33,4 +33,11 @@ public class CartItemService implements ICartItemService {
     public List<CartItem> getAll() {
         return this.repository.findAll();
     }
+
+    public List<CartItem> getAllByCartId(Long cartId) {
+        return this.repository.findByCartCartId(cartId);
+    }
+
+
 }
+
