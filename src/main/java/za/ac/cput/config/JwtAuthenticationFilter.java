@@ -32,15 +32,27 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        String authHeader = request.getHeader("Authorization");
-        String token = null;
-        String username = null;
+        final String authHeader = request.getHeader("Authorization");
 
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            token = authHeader.substring(7);
-            username = jwtUtil.extractUsername(token);
+        // 🧠 Skip filter entirely if no token
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
         }
 
+        final String token = authHeader.substring(7);
+        String username = null;
+
+        try {
+            username = jwtUtil.extractUsername(token);
+        } catch (Exception e) {
+            // 🛑 Prevents crash when token is malformed or empty
+            System.out.println("Invalid JWT: " + e.getMessage());
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        // 🧩 Authenticate only if username is valid and not already authenticated
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 

@@ -1,6 +1,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.Cart;
 import za.ac.cput.service.CartService;
@@ -39,6 +40,7 @@ public class CartController {
         return service.update(cart);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable Long id) {
         return service.delete(id);
